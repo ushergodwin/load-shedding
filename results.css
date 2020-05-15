@@ -1,0 +1,7 @@
+ body{
+ 	background-image: url("imgs/bgimg.jpg");
+ } 
+
+ tr:nth-child(even){
+ 	background-color: #f2f2f2;
+ }
