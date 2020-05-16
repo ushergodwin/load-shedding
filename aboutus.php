@@ -1,4 +1,3 @@
-
 <html>
 <head> <script src="slideshow.js"></script>
 	<title>About Us - ugsheds</title>
@@ -53,7 +52,7 @@
       <tr style="color: blue;">
     
     <td ><a href="terms.php">Terms & Conditions</a></td>  <td><a href="index.php"> HOME</a></td>
-    </tr>
+    <tr>
       <br> <br>
   </table>
 
