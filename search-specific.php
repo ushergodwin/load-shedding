@@ -9,8 +9,8 @@
   <title>Search Results - ugsheds</title>
   <link rel="stylesheet" type="text/css" href="results.css">
   <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
-  <style type="text/css"> body{background-image: url("imgs/20200426_115448_edited.jpg");} th{color: blue; text-decoration: underline;}
- td{ font-family: sans-serif; font-size: 22px;} </style>
+  <style type="text/css"> body{background-image: url("imgs/20200426_115448_edited.jpg");} th{color: blue; text-decoration: underline; font-size: 20px;}
+ td{ font-family: sans-serif; font-size: 22px;} .footer{  background-color: #f5f5f5; width: auto; max-width: 100%; padding: 0 15px; }</style>
 </head>
 <body>
   <?php
@@ -75,18 +75,18 @@ mysqli_close($conn);
  <br> <hr> <br>
 <div class="footer" align="center">
     <table>
-      <caption> <h5 style="color: whitesmoke;">&copy BIST Group C LoadShedding 2020</h5></caption>
+      <caption> <h5 style="color: blue;">&copy BIST Group C LoadShedding 2020</h5></caption>
       <tr style="color: blue;">
     
-    <td ><a href="terms.php">Terms & Conditions</a></td>   <td ><li><a href="aboutus.php">Abou Us</a></li></td>
-    <tr>
+    <td ><a href="terms.php">Terms & Conditions</a></td>   <td ><a href="aboutus.php">Abou Us</a></td>
+    </tr>
       <br> <br>
   </table>
 
 
   <table>
     
-    <tr style="color: whitesmoke;">
+    <tr style="color: blue;">
         
         <td><h2>Load</h2></td> <td><img src="imgs/logo.jpg" width="70" height="50" style="border-radius: 20%"></td> <td><h2>Shedding</h2></td>
       </tr>
