@@ -53,7 +53,7 @@
       <tr style="color: blue;">
     
     <td ><a href="terms.php">Terms & Conditions</a></td>  <td><a href="index.php"> HOME</a></td>
-    <tr>
+    </tr>
       <br> <br>
   </table>
 
