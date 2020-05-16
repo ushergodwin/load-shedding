@@ -8,7 +8,7 @@
 	<title>Current Schedules - ugsheds</title>
     <link rel="stylesheet" type="text/css" href="results.css">
     <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
-    <style type="text/css"> body{background-image: url("imgs/20200426_115448_edited.jpg");} th{color: blue; text-decoration: underline;}
+    <style type="text/css"> body{background-image: url("imgs/20200426_115448_edited.jpg");} th{color: blue; text-decoration: underline; font-size: 20px;}
     td{ font-family: sans-serif; font-size: 22px;} </style>
 </head>
 <body>
