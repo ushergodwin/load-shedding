@@ -25,7 +25,7 @@
   <div class="header">
   	<h2>Register</h2>
   </div>
-	
+<main class="reg">
   <form method="post" action="register.php" name="account">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
@@ -56,8 +56,9 @@
   	  <button type="submit" class="btn" name="submit" id="log" onclick="return validateAccount()">Register</button>
   	</div>
   	<p>
-  		Already a member? <a href="login.php">Sign in</a>
+  		Already a Staff Member? <a href="login.php">Sign in</a>
   	</p>
   </form>
+    </main>
 </body>
 </html>

@@ -25,7 +25,7 @@ echo "<table cellspacing='20'>";
 echo "<tr> ";
 echo"<th>District</th>";
 echo"<th>Division</th>";
-echo"<th>Parish</th>";
+echo"<th>Affected Areas</th>";
 echo"<th>Date</th>";
 echo"<th>Start Time</th>";
 echo"<th>End Time</th>";

@@ -48,25 +48,20 @@ error_reporting(E_ALL)
 .dropdown:hover .dropdown-content {display: block;}
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn { background-color: #3e8e41;
-        } li{list-style: none} .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: pointer; transition: 0.3s;} .closebtn:hover{color: red;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none} a{ font-size: 15px;}
-        /* Smartphones (portrait and landscape) ----------- */
-@media only screen
+ } li{list-style: none} .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: pointer; transition: 0.3s;} .closebtn:hover{color: red;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none} a{ font-size: 15px;} @media only screen
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
 /* Styles */
-}
-
-/* Smartphones (landscape) ----------- */
+}/* Smartphones (landscape) ----------- */
 @media only screen
 and (min-width : 321px) {
-/* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
+}/* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
 /* Styles */
-}
+}   #sub{
+  background-color: #4CAF50; color: white;border: none;
+cursor: pointer; width: 15%;}
     </style>
 </head>
 <body>
@@ -106,7 +101,7 @@ and (max-width : 320px) {
     <?php  if (isset($_SESSION['username'])) : ?>
     	<h2 style="color: blue; font-size: 30px">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h2> 
     <?php endif ?>
-	<script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script></h3>
+	<script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script>
     </div>
     <iframe src="contactadmin.php"  width="450" height="180" style="border: none;"></iframe>
 <p> As a Stuff Member You will  be <span style="color: blue"> able to add load shedding schedules <br> detailed with at what time</span>  will <span style="color: blue">power be OFF</span> in which area <br> and <span style="color: blue">when(day)</span> will the power be off.</p> </div>
@@ -118,7 +113,7 @@ and (max-width : 320px) {
     <h4 style="color: blue;">Search from here</h4>
   <form class="look" method="POST"  action="search-specific.php">
    <input id="input-group" type="text" name=" parish" placeholder="Type your location here" title="Search for your location to know when power will be off" required="required"> &nbsp
-   <button type="submit"><img src="imgs/search.jpg" id="pic"></button>
+   <button type="submit" id="sub"><img src="imgs/search.jpg" id="pic"></button>
    </form>
    </div>
 

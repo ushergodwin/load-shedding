@@ -36,138 +36,43 @@
 .form-container .btn:hover, .open-button:hover {
     opacity: 1;} body {font-family: 'Roboto', sans-serif; font-size: 18px;}  .style{ background-color: aliceblue} p{font-size: 18px;} a{  font-size: 18px;} td{ width: auto} /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: red;
-}
-
+  background-color: red;}
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
-}
-
+.form-container .btn:hover, .open-button:hover {opacity: 1;}
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
+width: 100%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;box-sizing: border-box;
+}/* Set a style for all buttons */
+button { background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 0;border: none;cursor: pointer;width: 100%;
+}button:hover {opacity: 0.8;}
 /* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
+.cancelbtn {width: auto;padding: 10px 18px;background-color: #f44336;}/* Center the image and position the close button */
+.imgcontainer {text-align: center;margin: 24px 0 12px 0;
+position: relative;}
+img.avatar { width: 40%;border-radius: 50%;}
+.container { padding: 16px;}
+span.psw {float: right;padding-top: 16px;}
 /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
+.modal {display: none; /* Hidden by default */position: fixed; /* Stay in place */z-index: 1; /* Sit on top */left: 0;top: 0;width: 100%; /* Full width */height: 100%; /* Full height */overflow: auto; /* Enable scroll if needed */background-color: rgb(0,0,0); /* Fallback color */background-color: rgba(0,0,0,0.4); /* Black w/ opacity */padding-top: 60px;}
 /* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
+.modal-content {background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
+}/* The Close Button (x) */
+.close {position: absolute;right: 25px;top: 0;color: #000;font-size: 35px;font-weight: bold;}
+        .close:hover,.close:focus {color: red;cursor: pointer;}
 /* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.text {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}  #sub{
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  width: 15%;
-}</style>
+.animate {-webkit-animation: animatezoom 0.6s;animation: animatezoom 0.6s}
+@-webkit-keyframes animatezoom {from {-webkit-transform: scale(0)} o {-webkit-transform: scale(1)}} 
+@keyframes animatezoom {from {transform: scale(0)} to {transform: scale(1)}}
+/* Change styles for span and cancel button on extra small screens */@media screen and (max-width: 300px) {span.text {
+display: block;float: none;}
+  .cancelbtn { width: 100%; }}  #sub{background-color: #4CAF50;color: white;border: none;cursor: pointer;width: 15%;
+} table tr td, table tr th {padding:0.625rem;}
+table tfoot, table thead,table tr:nth-of-type(2n) {background:none repeat scroll 0 0 #f0f0f0;}
+th,table tr:nth-of-type(2n) td {border-right:1px solid #fff;}
+td {border-right:1px solid #f0f0f0;}
+.footer{  background-color: grey; width: auto; max-width: 100%; padding: 0 15px;} #top{ text-align: center} .header{text-align: center}</style>
 		<script src="shedding.js"></script>
 </head>
 <body>
@@ -184,10 +89,15 @@ span.psw {
      <div class="alert" id="alert">
             <script>  function openAlert() {
     document.getElementById("alert").style.display = "inline-block";
+window.onclick = function(event) {
+    if (event.target == closebtn) {
+        closebtn.style.display = "none";
+    }
+}                    
 }  </script>
         <a name="privacy"></a>
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      The Email used when contacting us is not shared with anyone!
+      The Email used when contacting us is not shared with anyone! Refresh to close the pop up
     </div>
     
     
@@ -198,16 +108,15 @@ span.psw {
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
-  <a href="tel:+256756809525">Call us at +256-756-809-525</a> or send an email
+  <a href="tel:+256756809525">Call us at +256-756-809-525</a> 
+      <p>or send an email</p>
     <div class="container">
       <label for="email"><b>Email</b></label>
  <input type="text" name="EmailAddress" placeholder="someone@example.com" onclick="ValidateEmail(document.form1.EmailAddress)" required>
 
-      <label for="text"><b>Simple Concern</b></label>
-      <input type="text" name="question" maxlength="50" style="max-width: 100%; height: 20%;" required>
-        
-      <button type="submit">Send</button>
-      <label>
+      <label for="text"><b>Simple Concern</b></label> <br>
+   <textarea cols="40" rows="3"></textarea>
+        <button type="submit">Send</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -228,14 +137,14 @@ window.onclick = function(event) {
 }
 </script>
 <br> <br>
-<table cellspacing="10">
-<caption><h2 id="top">Welcome to the Load Shedding System</h2></caption>
-<tr> <td><p>You will  be able to know <span style="color: blue">when </span> and at <br><span style="color: blue"> what time</span>  will <span style="color: blue">Power </span> be <span style="color: blue"> OFF</span> in your area <br> by <span style="color: blue">searching</span> with  the  <span style="color: blue">name of your location </span> </p> </td>
-
-<td><p> All you need to do is type your <span style="color: blue">location </span> in the<br> <span style="color: blue">search box </span> bellow and you will be good to go!</p> </td>
-<td><h4 style="color: blue;"><script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script></h4></td> </tr>
-</table>
-</nav>
+<main class="header">
+<h2 id="top">Welcome to the Load Shedding System</h2>
+<p>You will  be able to know <span style="color: blue">when </span> and at <span style="color: blue"> what time</span>  will <span style="color: blue">Power </span> be <span style="color: blue"> OFF</span> in your area  by <span style="color: blue">searching</span> with  the  <span style="color: blue">name of your location </span> </p> 
+<p> All you need to do is type your <span style="color: blue">location </span> in the <span style="color: blue">search box </span> bellow and you will be good to go!</p> 
+<h4 style="color: blue;"><script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script></h4>
+    </main>
+    </div>
+    </nav>
  <div class="style">
   <h3>Search from here</h3>
   <form class="look" method="POST"  action="search-specific.php">
@@ -254,13 +163,13 @@ window.onclick = function(event) {
     <h2>Add Location</h2>
 
     <label for="district"><b>District</b></label>
-    <input type="text" placeholder="Enter District" name="district" required pattern="\w+" title="Enter Only Letters">
+    <input type="text" placeholder="Enter District" name="district" required pattern="\w+" title="Enter Only Letters, without spaces" value="<?php echo $District; ?>">
 
     <label for="division"><b>Division/ Sub County</b></label>
-    <input type="text" placeholder="Enter Division" name="division" required pattern="\w+" title="Enter Only Letters">
+    <input type="text" placeholder="Enter Division" name="division" required pattern="\w+" title="Enter Only Letters, without spaces" value="<?php echo $Division; ?>">
 
     <label for="parish"><b>Parish/ Town</b></label>
-    <input type="text" placeholder="Enter parish ot town" name="parish" required pattern="\w+" title="Enter Only Letters">
+    <input type="text" placeholder="Enter parish ot town" name="parish" required pattern="\w+" title="Enter Only Letters, without spaces" value="<?php echo $Parish; ?>">
 
 
     <button type="submit" class="btn" name="reg_loc" onclick="return conf()">Submit</button>
@@ -301,7 +210,7 @@ function conf() {
 
   <table>
     
-    <tr style="color: whitesmoke;">
+    <tr style="color: blue;">
         
         <td><h4>Load</h4></td> <td><img src="imgs/logo.jpg" width="70" height="50" style="border-radius: 20%"></td> <td><h4>Shedding</h4></td>
       </tr>

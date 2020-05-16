@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">#log:hover{
+	color: white;
+	cursor: pointer;
+  font-weight: bold;
+  font-size: 20px
+
+}</style>
 </head>
 <body>
 
@@ -33,7 +40,7 @@
   
   	<div class="input-group">
 
-  		<button type="submit" class="btn" name="login_user">Login</button>
+  		<button type="submit" class="btn" name="login_user" id="log">Login</button>
 
   	</div>
 

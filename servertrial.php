@@ -114,12 +114,13 @@ if (isset($_POST['submit'])) {
         		$_SESSION['username'] = $username;
         		$_SESSION['sussess'] = "you are logged in";
                 header("location: welcome.php");
-        	}else { 
-                array_push($errors, "something went wrong");
-        }
+        	}else{
+            array_push($errors, "Oops, Account Not Found!!");
+            }
         } 
-    	
-    }
+        }
+ 
+
 
 
 ?>

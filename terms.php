@@ -6,7 +6,7 @@
     <meta name="author" content="Tumuhimbise Usher Godwin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <style type="text/css"> body{ background-color: aliceblue; font-family: 'Roboto', sans-serif  } div{ margin-right: 200px } .header1{text-align: center} </style>
+        <style type="text/css"> body{ background-color: aliceblue; font-family: 'Roboto', sans-serif  } div{ max-width: 100% } .header1{text-align: center} </style>
     </heda>
 
     <body>

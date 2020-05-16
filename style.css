@@ -5,8 +5,10 @@
 body {
   font-size: 120%;
   background: #F8F8FF;
+    font-family: sans-serif;
 }
 
+a{background-color: aliceblue}
 .header {
   max-width: 100%;
   margin: 50px auto 0px;
@@ -23,8 +25,9 @@ form, .content {
   margin: 0px auto;
   padding: 20px;
   border: 1px solid #B0C4DE;
-  background: white;
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 1px 10px 10px 10px;
+background-image: url(imgs/header.jpg); background-attachment: fixed; background-repeat: round;
+
 }
 .input-group {
   margin: 10px 0px 10px 0px;
@@ -33,15 +36,31 @@ form, .content {
   display: block;
   text-align: left;
   margin: 3px;
+    color: whitesmoke;
+
+
 }
 .input-group input {
-  height: 30px;
-  width: 93%;
+  height: 40px;
+  max-width: 100%;
   padding: 5px 10px;
-  font-size: 16px;
+ border-radius: 10px 10px 10px 10px;
   border-radius: 5px;
   border: 1px solid gray;
 }
+
+input[type=text], input[type=password], input[type=number]{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+     border-radius: 10px 10px 10px 10px;
+    border: 3px solid #B0C4DE;
+    border-top-style: outset;
+}
+
 .btn {
   padding: 10px;
   font-size: 15px;
@@ -66,9 +85,7 @@ form, .content {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
-
-
-
+p{color: whitesmoke;}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
 and (min-device-width : 320px)

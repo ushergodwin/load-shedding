@@ -1,5 +1,7 @@
     <?php
    include("config.php");
+    $District = $Division = $Parish = "";
+    $errors = array();
 
        if (isset($_POST['reg_loc'])) {
         $District = mysqli_real_escape_string($conn, $_POST['district']);
