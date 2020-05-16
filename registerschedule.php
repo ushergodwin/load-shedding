@@ -102,7 +102,7 @@ parishSel.options[parishSel.options.length] = new Option(parish[i], parish[i]);
   <button class="dropbtn">Menu</button>
   <div class="dropdown-content">
     <a href="welcome.php">Home</a>
-  <button type="button" style="background-color: black; border-radius: 50px" onclick="logOut()"> <a href="welcome.php?logout='1'" style="color: red;">Logout</a> </button>
+    <button type="button" style="background-color: black; border-radius: 50px" onclick="return confirm('SignOut of your Account?')"> <a href="welcome.php?logout='1'" style="color: red;">Logout</a> </button>
   </div>
 </div>
 <a name="Top"></a>
