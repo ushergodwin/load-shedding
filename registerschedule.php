@@ -1,4 +1,20 @@
-<?php include("config.php"); include('addSchedule.php');?>
+<?php include("config.php"); include('addSchedule.php');
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+ 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
 <html>
 <head>
 <meta charset="utf-8">
