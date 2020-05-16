@@ -72,7 +72,7 @@ cursor: pointer; width: 15%;}
   <div class="dropdown-content">
     <a href="registerschedule.php"> Add Schedule </a>
     <a href="Results.php">View Schedules</a>
-           <button type="button" style="background-color: black; border-radius: 50px" onclick="logOut()"> <a href="welcome.php?logout='1'" style="color: red;">Logout</a> </button>
+  <button type="button" style="background-color: black; border-radius: 50px" onclick="return confirm('SignOut of your Account?')"> <a href="welcome.php?logout='1'" style="color: red;">Logout</a> </button>
   </div>
 </div>
          <div class="alert" id="alert">
