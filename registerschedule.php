@@ -1,4 +1,5 @@
 <?php include("config.php"); include('addSchedule.php');
+
   session_start(); 
 
   if (!isset($_SESSION['username'])) {
@@ -25,28 +26,29 @@ error_reporting(E_ALL);
  <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
 <link rel="stylesheet" type="text/css" href="register.css">
 <script src="shedding.js"> </script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style type="text/css">
-.dropbtn { background-color: #4CAF50; color: white; padding: 16px;font-size: 16px; border: none; cursor: pointer;
+.dropbtn {background-color: blue; color: white;padding: 16px;font-size: 12px; border: none;cursor: pointer; border-radius: 5px;
 }/* The container <div> - needed to position the dropdown content */
 .dropdown {position: relative;display: inline-block;}
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {display: none;position: absolute;background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;}
+.dropdown-content { display: none; position: absolute; background-color: #f9f9f9;min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 1;}
 /* Links inside the dropdown */
-.dropdown-content a { color: blue;padding: 12px 16px;text-decoration: none;display: block;}
+.dropdown-content a { color: blue; padding: 12px 16px; text-decoration: none;display: block;}
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #f1f1f1}
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content { display: block;}
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
-}
- #column1 { background-color: #a1edcc; width: 350px; } 
- #column2 { background-color:#a0e9ed; width: 400px; } 
-#column3 {  background-color:#f497f1;width: 320px;} 
-body{ background-image: url("imgs/20200426_115231_edited.jpg"); background-repeat: round; }
-    </style>
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+body{ background-color: aliceblue;}
+ </style>
 <script>
 var locationObject = {
 "Kampala": { "Nakawa Division": ["Banda" ,"Bogolobi" ,"Bukoto I" ,"Bukoto Ii" ,"Butabika" ,"I.t.e.k" ,"Kiswa" ,"Kiwatule" ,"Kyambogo" ,"Kyanja" ,"Luzira" ,"Luzira Prisons" ,"Mbuya I" ,"Mbuya Ii" ,"Mutungo", "Nabisunsa", "Naguru I", "Naguru Ii", "Nakawa", "Nakawa Institutions", "Ntinda", "UPK", "Upper Estate"],
@@ -102,103 +104,81 @@ parishSel.options[parishSel.options.length] = new Option(parish[i], parish[i]);
   <button class="dropbtn">Menu</button>
   <div class="dropdown-content">
     <a href="welcome.php">Home</a>
-    <button type="button" style="background-color: black; border-radius: 50px" onclick="return confirm('SignOut of your Account?')"> <a href="welcome.php?logout='1'" style="color: red;">Logout</a> </button>
+ <a href="welcome.php?logout='1'"  class="btn btn-danger" onclick="return confirm('SignOut of your Account?')">Logout</a>
   </div>
 </div>
 <a name="Top"></a>
-<table cellspacing="30">
-  <caption><h1 style="color: white;">Fill the Forms bellow appropriately to add Load Sheddings</h1> </caption>
-       <th width="10%"> <div id="column1">
-        <h2>Choose the Location</h2>
+<div class="container">
+	<div class="jumbotron dark bg-secondary">
+ <h1 style="color: white;">Fill the Forms bellow appropriately to add Load Sheddings</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-4 dark bg-light">
+        <h4 class="text-primary">Choose the Location</h4>
        <form name="myform" id="myForm" action="registerschedule.php" method="POST">
         <?php include("errors.php"); ?>
-  <div class="input-group">
-    <h4>Enter ID</h4>
-   <input type="text" name="identification" maxlength="5" required>
-  </div> <br>
-  <h4>Select District: </h4>&nbsp &nbsp &nbsp<select name="state" id="countySel" size="1">
+    <label for="id" class="control-label">Enter ID</label>
+   <input type="text" name="identification" maxlength="5" class="form-control" required> <br>
+  <label for="district">Select District: </label><select name="state" id="countySel" size="1" class="custom-select">
     <option value="" selected="selected">Select District</option>
     </select>
-    <h4>Select Division: </h4>&nbsp &nbsp<select name="countrya" id="stateSel" size="1">
+    <label for="division">Select Division: </label><select name="countrya" id="stateSel" size="1" class="custom-select">
     <option value="" selected="selected">Please Division first</option>
     </select> 
-    <h4>Select Parish: </h4> &nbsp &nbsp &nbsp <select name="district" id="districtSel" size="1">
+    <label for="parish" class="control-label">Select Parish: </label> <select name="district" id="districtSel" size="1" class="custom-select">
     <option value="" selected="selected">Please select Division first</option>
     </select> <br> <br>
     <input type="submit" id="log" name="reg_loc">
   </form>
       </div>
-    </th>
-
-     <th width="10%"> <div id="column2">
-        <h2>Location not among the options? <br> Enter manually!!</h2>
+  
+    
+	    <div class="col-md-4 dark bg-light">
+        <h4 class="text-primary">Location not among the options? Enter manually!!</h4>
         <h2 class="error"></h2>
         <form action="registerschedule.php" method="POST"  name="schForm">
-            <div class="input-group">
-             <h4>Enter ID</h4>
-   <input type="text" name="identification" minlength="5" maxlength="5" required>
-  </div>
-          <div class="input-group">
-            <h4>District</h4>
-       <input type="text" name="state" required> <br>
-     </div>
-     <div class="input-group">
-      <h4>Division</h4>
-       <input type="text" name="countrya" required><br>
-     </div>
-     <div class="input-group">
-      <h4>Pasish</h4>
-       <input type="text" name=" district" required>
-     </div>
-       <input id="log" type="submit" id="log" name="reg_loc" onclick="validateForm();" >
+             <label for="id" class="control-lable">Enter ID</label>
+   <input type="text" name="identification" minlength="2" maxlength="5" class="form-control" required>
+    
+    <label for="district" class="control-lable">District</label>
+       <input type="text" name="state" class="form-control" required> <br>
+
+      <label for="division" class="control-lable">Division</label>
+          <input type="text" name="countrya" class="form-control" required><br>
+      <label for="parish" class="control-lable">Pasish</label>
+         <input type="text" name=" district" class="form-control" required> <br>
+         <input id="log" type="submit" id="log" name="reg_loc" onclick="validateForm();" >
      </form>
       </div>
-</th>
-
-   <th width="10%"> <div id="column3">
-       <br> <br>
-        <h2>Enter When Power Cut Off Will Happen</h2>
+    
+       <div class="col-md-4 dark bg-light">
+        <h4 class="text-primary">Enter When Power Cut Off Will Happen</h4>
   <form method="POST" action="registerschedule.php" name="form_3">
-    <div class="input-group">
-      <h3> Date</h3>
-        <input id="dt" type="date" name="day" required><br>
-      </div> 
-      <div class="input-group">
-      <h3> Time</h3>
-       <label>From</label>
-        <input id="asp" type="time" name="period" required><br>
-      </div>
-       <div class="input-group">
-       <label>To</label><br> <br>
-        <input id="asp" type="time" name="periodto" required><br>
-      </div>
-      <div class="input-group">
-       <h3>Enter ID</h3> <input type="text" name="identification" minlength="5" maxlength="5" required>
-      </div>
+    <label for="date" class="control-lable"> Date</label>
+        <input id="dt" type="date" name="day" class="form-control" required><br>
+     <label for="time" class="control-lable"> Time</label>
+       <label for="from" class="control-lable">From</label>
+        <input id="asp" type="time" name="period" class="form-control" required><br>
+       <label for="to" class="control-lable">To</label><br>
+        <input id="asp" type="time" name="periodto" class="form-control" required><br>
+       <label for="id" class="control-lable">Enter ID</label> <br>
+      <input type="text" name="identification" minlength="5" maxlength="5" class="form-control" required> <br> <br>
       <input id="log" type="submit" name="submit" value="Add" onclick="isValid()"> 
     </form> 
   </div>
-      </div>
-</th>
-</table>
-
-	 <br> <hr> <br>
-<div align = "center">
-    <table>
-      <caption> <h4 style="color: white;">&copy BIST Group C LoadShedding 2020</h4></caption>
-      <tr style="color: blue;">
-     <td ><a href="terms.php">Terms & Conditions</a></td>   <td ><li><a href="aboutus.php">Abou Us</a></li></td> <td><li><a href="#Top">Back To Top</a></li></td>
-    <tr>
-      <br> <br>
-  </table>
-
-
-  <table>
-    <tr style="color: white;">
-        
-    <td><h4>Load</h4></td> <td><img src="imgs/logo.jpg" width="70" height="50" style="border-radius: 20%"></td> <td><h4>Shedding</h4></td>
-      </tr>
-  </table>
-</div>
+    </div>
+  
+<hr>
+<footer>
+    <div class="row dark bg-light">
+        <div class="col-md-6">
+<h5 class="text-primary text-muted">&copy BIST Group C LoadShedding 2020</h5>
+        </div>
+            <div class="col-md-6">
+<a href="terms.php">Terms & Conditions</a> &nbsp; &nbsp; <a href="aboutus.php">Abou Us</a> &nbsp;| &nbsp;<a href="#Top">Back To Top</a>
+        </div>
+    </div>
+    </footer>
+    </div>
 </body>
 </html>
