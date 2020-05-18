@@ -5,7 +5,7 @@
     <meta name="description" content="Free Load Shedding schedules in Uganda">
     <meta name="keywords" content="load shedding, power cut off , Uganda, BIST2019/2019, cocis news, BIST cocis">
     <meta name="author" content="Tumuhimbise Usher Godwin">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -14,7 +14,13 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="shedding.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style type="text/css"> .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: pointer; transition: 0.3s;} .closebtn:hover{color: yellow;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none; max-width: 100% } a{ font-size: 15px;} .icon-bar{top: 50px; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); position: fixed; display: inline-block;margin-left: 20px; }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+    <style type="text/css"> .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: hand; transition: 0.3s;} .closebtn:hover{color: yellow;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none; max-width: 100% } a{ font-size: 15px;} #icon-bar{top: 50px; position: fixed; display: inline-block;margin-left: 20px; }
         
         /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button { background-color: #555; color: white; padding: 16px 20px; border: none; cursor: pointer; opacity: 0.8; position: fixed;bottom: 23px;right: 28px;width: 280px;}
@@ -76,16 +82,30 @@ td {border-right:1px solid #f0f0f0;}
 		<script src="shedding.js"></script>
 </head>
 <body>
-<nav>
-  <br>
-  <div class="icon-bar"> 
-      <abbr title="COCIS NEWS"> <a href="https://cocis.news/" style="color:red"> <img src="imgs/cocis.png" style="height: 40px; width: 40px; border-radius: 5px;" alt="COCIS NEWS"></a> </abbr>  &nbsp  <!-- Add font awesome icons -->
-<a href="https://twitter.com/usherTgodwin" class="fa fa-twitter" style=" background: #55ACEE;
-  color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a>
-<a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="font-size:50px;color:blue; width: 40px; height: 40px;" ></a> &nbsp
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">LOAD SHEDDING</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="index.php" class="nav-item nav-link active">Home</a>
+            <a href="aboutus.php" class="nav-item nav-link">About</a>
+            <a href="#" class="nav-item nav-link" onclick="document.getElementById('id01').style.display='block'">Contact Us</a> &nbsp; &nbsp;
+             <abbr title="COCIS NEWS"> <a href="https://cocis.news/" style="color:red"> <img src="imgs/cocis.png" style="height: 40px; width: 40px; border-radius: 5px;" alt="COCIS NEWS"></a> </abbr> &nbsp; &nbsp;
+            <a href="https://twitter.com/usherTgodwin" class="fa fa-twitter" style=" background: #55ACEE;
+  color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a>&nbsp; &nbsp;
+            <a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="font-size:50px;color:blue; width: 40px; height: 40px;" ></a> &nbsp; &nbsp;
 <a href="https://api.whatsapp.com/send?phone=+256756809525" class="fa fa-whatsapp" style="font-size:45px;color:green; height: 40px;"></a>
-</div>
-    
+        </div> &nbsp; &nbsp;
+        <form class="form-inline ml-auto" method="post" action="search-specific.php">
+            <input type="text" class="form-control mr-sm-2" placeholder="Search..." name="parish"><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
+        </form>
+        
+    </div>
+</nav>
+    <div class="card">
      <div class="alert" id="alert">
             <script>  function openAlert() {
     document.getElementById("alert").style.display = "inline-block";
@@ -97,11 +117,8 @@ window.onclick = function(event) {
 }  </script>
         <a name="privacy"></a>
       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-      The Email used when contacting us is not shared with anyone! Refresh to close the pop up
+      The Email used when contacting us is not shared with anyone!
     </div>
-    
-    
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto; float: right; ">Contact Us</button>
 
 <div id="id01" class="modal">
   <form class="modal-content animate" action="/action_page.php" name="form1" method="post">
@@ -111,16 +128,16 @@ window.onclick = function(event) {
   <a href="tel:+256756809525">Call us at +256-756-809-525</a> 
       <p>or send an email</p>
     <div class="container">
-      <label for="email"><b>Email</b></label>
- <input type="text" name="EmailAddress" placeholder="someone@example.com" onclick="ValidateEmail(document.form1.EmailAddress)" required>
+      <label for="email" class="control-lable"><b>Email</b></label>
+ <input type="text" class="form-control" name="EmailAddress" placeholder="someone@example.com" required>
 
-      <label for="text"><b>Simple Concern</b></label> <br>
-   <textarea cols="40" rows="3"></textarea>
-        <button type="submit">Send</button>
+      <label for="text" class="control-label"><b>Simple Concern</b></label> <br>
+   <textarea cols="40" rows="3" class="form-control"></textarea>
+        <button type="submit" class="btn btn-primary btn-lg" onclick="ValidateEmail(document.form1.EmailAddress)">Send</button>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-outline-danger">Cancel</button>
     </div>
   </form>
 </div>
@@ -136,26 +153,57 @@ window.onclick = function(event) {
     }
 }
 </script>
-<br> <br>
-<main class="header">
-<h2 id="top">Welcome to the Load Shedding System</h2>
-<p>You will  be able to know <span style="color: blue">when </span> and at <span style="color: blue"> what time</span>  will <span style="color: blue">Power </span> be <span style="color: blue"> OFF</span> in your area  by <span style="color: blue">searching</span> with  the  <span style="color: blue">name of your location </span> </p> 
+<h2 id="top" class="card-title">Welcome to the Load Shedding System</h2>
+<p class="card-text">You will  be able to know <span style="color: blue">when </span> and at <span style="color: blue"> what time</span>  will <span style="color: blue">Power </span> be <span style="color: blue"> OFF</span> in your area  by <span style="color: blue">searching</span> with  the  <span style="color: blue">name of your location </span> </p> 
 <p> All you need to do is type your <span style="color: blue">location </span> in the <span style="color: blue">search box </span> bellow and you will be good to go!</p> 
 <h4 style="color: blue;"><script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script></h4>
-    </main>
     </div>
-    </nav>
- <div class="style">
-  <h3>Search from here</h3>
-  <form class="look" method="POST"  action="search-specific.php">
-   <input id="input-group" type="text" name="parish" placeholder="Type your location here" title="Search for your location, only Letters allowed" required> &nbsp
-   <button type="submit" id="sub"><img src="imgs/search.jpg" id="pic"></button>
+ <div class="card-group">
+     <div class="card">
+     <div class="card-body">
+         <div class="card-text-white bg-light">
+  <h4 class="card-title text-primary">Search from here</h4>
+  <form method="POST"  action="search-specific.php">
+      <div class="form-group">
+   <input id="input-group" type="text" name="parish" placeholder="Type your location here" title="Search for your location, only Letters allowed" required class="form-control">
+      </div>
+   <button type="submit" class="btn btn-primary"> <i class="fa fa-search"></i> Search</button>
    </form>
+             <p class="text-info">Infor: A power outage (also called a power cut, a power out, a power blackout, power failure or a blackout) is the loss of the electrical power network supply to an end user.</p>
+         </div>
+     </div>
    </div>
- 
-<br> <br>
-   <div style=" background-color: darkred; border-radius: 8px; padding: 1px; text-align: left; margin-right: 100px;"><p style="color: white; font-size: 18px; font-weight: bold; font-style: inherit; "> If your location had a power cut off <br>but did not appear in your search results, please add it to our system by<br> clicking on the bottom right button</p></div>
-
+   
+   <div class="card">
+       <div class="card-body">
+           <div class="card-text-white bg-light">
+         <h4 class="card-title">NOTE</h4>
+        <p class="text-danger">If your location had a power cut offbut did not appear in your search results, please add it to our system byclicking on the bottom right button</p>
+           </div>
+    </div>
+     </div>
+     
+        <div class="card">
+       <div class="card-body">
+         <h4 class="card-header">IMPORTANT!</h4>
+           <div class="card-text bg-light">
+           <h5 class="card-title">WHY KNOW ABOUT POWER OUTAGE SCHEDULES</h5>
+        <p class="text-warning">In most cases, we are disturbed when power goes off! perhaps you are replying to an important email, you are making an order for your favorite product, you are writing the breakthrough of your software..and many other instances. When powers goes off without your knowledge, you surely get stack and frastrated</p>
+               <p class="card-footer text-muted">Dont get stack</p>
+           </div>
+            </div>
+     </div>
+           
+            <div class="card">
+       <div class="card-body">
+           <div class="card-text-white bg-light">
+         <h4 class="card-header">NO MORE WORRIES</h4>
+            <p class="text-success">With Our load shedding susytem, you can know when power will be off from your area so that you can prepare in advance for power outges! It's just a single search with the name of your location.</p>
+        <p class="card-footer text-muted">Enjoy the service</p>
+           </div>
+    </div>
+     </div>
+    </div>
  <button class="open-button" onclick="openForm()">Add Location</button>
 <div class="form-popup" id="myForm">
   <form action="index.php" class="form-container" method="POST">
@@ -172,7 +220,7 @@ window.onclick = function(event) {
     <input type="text" placeholder="Enter parish ot town" name="parish" required pattern="\w+" title="Enter Only Letters, without spaces" value="<?php echo $Parish; ?>">
 
 
-    <button type="submit" class="btn" name="reg_loc" onclick="return conf()">Submit</button>
+    <button type="submit" class="btn btn-primary btn-sm" name="reg_loc" onclick="return conf()">Submit</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
