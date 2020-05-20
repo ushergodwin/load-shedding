@@ -10,55 +10,72 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-  <title>Registration Page</title>
+  <title>Register Staff - ugsheds</title>
   <link rel="stylesheet" type="text/css" href="style.css">
     <script src="shedding.js"></script>
-    <style title="text/css"> #log:hover{
-	color: white;
-	cursor: pointer;
-  font-weight: bold;
-  font-size: 20px
-
-}</style>
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style type="text/css"> .control-label{color: aliceblue } .header{ width: 100%}</style>
+    <script>
+// Self-executing function
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+</script>
 </head>
 <body>
-  <div class="header">
-  	<h2>Register</h2>
+	<div class="container">
+         <div class="header">
+  	<h2>REGISTER</h2>
   </div>
-<main class="reg">
-  <form method="post" action="register.php" name="account">
-  	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  	  <label>Username</label>
-  	  <input type="text" name="username" value="<?php echo $username; ?>">
-  	</div>
-  	<div class="input-group">
-  	  <label>Password</label>
-  	  <input type="password" name="password">
-  	</div>
-  	<div class="input-group">
-  	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
-  	</div>
-        	<div class="input-group">
-  	  <label>Staff Name</label>
-  	  <input type="text" name="name" value="<?php echo $name; ?>">
-  	</div>
-              	<div class="input-group">
-  	  <label>Staff Contact</label>
-  	  <input type="text" name="contact" value="<?php echo $contact; ?>">
-  	</div>
-              	<div class="input-group">
-  	  <label>Staff Address</label>
-  	  <input type="text" name="address" value="<?php echo $address; ?>">
-  	</div>
-  	<div class="input-group">
-  	  <button type="submit" class="btn" name="submit" id="log" onclick="return validateAccount()">Register</button>
-  	</div>
+  <form class="needs-validation" method="post" action="register.php" novalidate>
+  	<?php include("errors.php");?>
+      <div class="form-group">
+  		<label for="username" class="control-label">Username</label><br>
+  		<input type="text" name="username" class="form-control" value="<?php echo $username; ?>" required>
+      </div>
+      <div class="form-group">
+  		<label for="password" class="control-label">Password</label><br>
+  		<input type="password" name="password" class="form-control" value="<?php echo $password; ?>" required>
+      </div>
+      <div class="form-group">
+      <label for="password" class="control-label">Confirm Password</label><br>
+          <input type="password" name="password_2" class="form-control" value="<?php echo $password_2; ?>" required></div>
+      <div class="form-group">
+    	<label for="username" class="control-label">Staff Name</label><br>
+          <input type="text" name="name" class="form-control" required> </div>
+      <div class="form-group">
+      <label for="contact" class="control-label">Staff Contact</label><br>
+  		<input type="number" name="contact" class="form-control" value="<?php echo $contact; ?>" required>
+      </div>
+      <div class="form-group">
+      	<label for="address" class="control-label">Staff Address</label><br>
+          <input type="text" name="address" class="form-control" value="<?php echo $address; ?>" required></div>
+      <div class="form-group">
+<button type="submit" class="btn btn-primary" name="submit">Register</button>
   	<p>
-  		Already a Staff Member? <a href="login.php">Sign in</a>
+Already a Staff Member? <a href="login.php" class="btn btn-outline-light">Login</a>
   	</p>
+      </div>
   </form>
-    </main>
+    </div>
 </body>
 </html>
