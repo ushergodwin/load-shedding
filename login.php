@@ -12,44 +12,33 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style type="text/css">#log:hover{
-	color: white;
-	cursor: pointer;
-  font-weight: bold;
-  font-size: 20px
-
-}</style>
+cursor: pointer;font-weight: bold;font-size:20px;
+        } #log{  background-color: aliceblue;} .header{width: 100%} .control-label{color: aliceblue }</style>
 </head>
 <body>
 
-
-  <div class="header">
+	<div class="container">
+        <div class="header">
   	<h2>Login</h2>
   </div>
-	 
   <form method="post" action="login.php">
   	<?php include('errors.php'); ?>
-  	<div class="input-group">
-  		<label>Username</label>
-  		<input type="text" name="username" >
-  	</div>
-  	<div class="input-group">
-  		<label>Password</label>
-  		<input type="password" name="password">
-  	</div>
-  
-  	<div class="input-group">
-
-  		<button type="submit" class="btn" name="login_user" id="log">Login</button>
-
-  	</div>
-
+  		<label for="username" class="control-label">Username</label><br>
+  		<input type="text" name="username" class="form-control"><br>
+  		<label for="password" class="control-label">Password</label><br>
+  		<input type="password" name="password" class="form-control"><br>
+<button type="submit" class="btn btn-primary" name="login_user">Login</button>
   	<p>
   		Not yet a member? <a href="register.php">Sign up</a>
   	</p>
   </form>
-  <br><br><br> <br> <br>
-  </nav>
-
+    </div>
 </body>
 </html>
