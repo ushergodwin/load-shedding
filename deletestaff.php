@@ -27,7 +27,7 @@
          <div class="col-md-4">
         <h4 class="text-primary">Staff Details</h4>
 <?php include("config.php");
-     $sql = "SELECT id, username, staffName, staffContact, staffAddress FROM Staff";
+     $sql = "SELECT id, username, staffName, staffContact, staffAddress FROM staff";
 
           $result = mysqli_query($conn, $sql);
           if (mysqli_num_rows($result)> 0) {
