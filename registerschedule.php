@@ -49,55 +49,7 @@ error_reporting(E_ALL);
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 body{ background-color: aliceblue;}
  </style>
-<script>
-var locationObject = {
-"Kampala": { "Nakawa Division": ["Banda" ,"Bogolobi" ,"Bukoto I" ,"Bukoto Ii" ,"Butabika" ,"I.t.e.k" ,"Kiswa" ,"Kiwatule" ,"Kyambogo" ,"Kyanja" ,"Luzira" ,"Luzira Prisons" ,"Mbuya I" ,"Mbuya Ii" ,"Mutungo", "Nabisunsa", "Naguru I", "Naguru Ii", "Nakawa", "Nakawa Institutions", "Ntinda", "UPK", "Upper Estate"],
-"Kawempe Division": ["Bwaise I", "Bwaise II", "Bwaise III", "Kanyanya", "Kawempe I", "Kawempe II", "Kazo Ward", "Kikaya", "Komamboga", "Kyebando", "Makerere I", "Makerere Ii", "Makerere Iii", "Mpererwe", "Mulago I", "Mulago Ii", "Mulago Iii", "Makerere", "Wandegeya"
-],
 
-"Makindye Division": ["Bukasa", "Buziga", "Ggaba", "Kabalagala", "Kansanga-muyenga", "Katwe I", "Katwe II", "Kibuli", "Kibuye I", "Kibuye II", "Kisugu", "Lukuli", "Luwafu", "Makindye I", "Makindye II", "Nsambya Central", "Nsambya Housing Estate", "Nsambya Police Barracks", "Nsambya Railway", "Salaama", "Wabigalo"
-],
-
-"Rubaga Division": ["Busega", "Kabowa", "Kasubi", "Lubia", "Lungujja", "Mutundwe", "Najjanankumbi I", "Najjanankumbi II", "Nakulabye", "Namirembe", "Nateete", "Ndeeba", "Rubaga"
-
-
-],
-},
-"Wakio District": {
- "Central Division": ["Bukesa", "Central East Ward", "Central West Ward", "Civic Centre", "Industrial Area"
-, "Kagugube"
-, "Kamwokya I", "Kamwokya II", "Kisenyi I", "Kisenyi II","Kisenyi III", "Kololo I", "Kololo II", "Kololo III", "Kololo IV", "Magwa Ward", "Mengo", "Nakasero I", "Nakasero II", "Nakasero III", "Nakasero IV", "Nakivubo Shauliyako", "Old Boma Ward", "Old Kampala", "Kamwokya"],
-
-"Kira": ["Bweyogerere", "Kimwanyi", "Kira", "Kireka", "Kirinya"],
-
-}, 
-}
-window.onload = function () {
-var districtSel = document.getElementById("countySel"),
-divisionSel = document.getElementById("stateSel"),
-parishSel = document.getElementById("districtSel");
-for (var district in locationObject) {
-districtSel.options[districtSel.options.length] = new Option(district, district);
-}
-countySel.onchange = function () {
-divisionSel.length = 1; // remove all options bar first
-parishSel.length = 1; // remove all options bar first
-if (this.selectedIndex < 1) return; // done 
-for (var division in locationObject[this.value]) {
-divisionSel.options[divisionSel.options.length] = new Option(division, division);
-}
-}
-districtSel.onchange(); // reset in case page is reloaded
-divisionSel.onchange = function () {
-parishSel.length = 1; // remove all options bar first
-if (this.selectedIndex < 1) return; // done 
-var parish = locationObject[districtSel.value][this.value];
-for (var i = 0; i < parish.length; i++) {
-parishSel.options[parishSel.options.length] = new Option(parish[i], parish[i]);
-}
-}
-}
-</script>
 </head>
 <body>
   <div class="dropdown" align="left">
@@ -109,32 +61,12 @@ parishSel.options[parishSel.options.length] = new Option(parish[i], parish[i]);
 </div>
 <a name="Top"></a>
 <div class="container">
-	<div class="jumbotron dark bg-secondary">
- <h1 style="color: white;">Fill the Forms bellow appropriately to add Load Sheddings</h1>
+           	<div class="jumbotron-md dark bg-secondary">
+ <h2 style="color: white;">Fill the Forms bellow appropriately to add Load Sheddings</h2>
 	</div>
 	<div class="row">
-		<div class="col-md-4 dark bg-light">
-        <h4 class="text-primary">Choose the Location</h4>
-       <form name="myform" id="myForm" action="registerschedule.php" method="POST">
-        <?php include("errors.php"); ?>
-    <label for="id" class="control-label">Enter ID</label>
-   <input type="text" name="identification" maxlength="5" class="form-control" required> <br>
-  <label for="district">Select District: </label><select name="state" id="countySel" size="1" class="custom-select">
-    <option value="" selected="selected">Select District</option>
-    </select>
-    <label for="division">Select Division: </label><select name="countrya" id="stateSel" size="1" class="custom-select">
-    <option value="" selected="selected">Please Division first</option>
-    </select> 
-    <label for="parish" class="control-label">Select Parish: </label> <select name="district" id="districtSel" size="1" class="custom-select">
-    <option value="" selected="selected">Please select Division first</option>
-    </select> <br> <br>
-    <input type="submit" id="log" name="reg_loc">
-  </form>
-      </div>
-  
-    
-	    <div class="col-md-4 dark bg-light">
-        <h4 class="text-primary">Location not among the options? Enter manually!!</h4>
+		<div class="col-md-6 dark bg-light">
+    <h4 class="text-primary">Location not among the options? Enter manually!!</h4>
         <h2 class="error"></h2>
         <form action="registerschedule.php" method="POST"  name="schForm">
              <label for="id" class="control-lable">Enter ID</label>
@@ -149,9 +81,9 @@ parishSel.options[parishSel.options.length] = new Option(parish[i], parish[i]);
          <input type="text" name=" district" class="form-control" required> <br>
          <input id="log" type="submit" id="log" name="reg_loc" onclick="validateForm();" >
      </form>
-      </div>
-    
-       <div class="col-md-4 dark bg-light">
+  </div>
+  
+    <div class="col-md-6 dark bg-light">
         <h4 class="text-primary">Enter When Power Cut Off Will Happen</h4>
   <form method="POST" action="registerschedule.php" name="form_3">
     <label for="date" class="control-lable"> Date</label>
@@ -165,9 +97,39 @@ parishSel.options[parishSel.options.length] = new Option(parish[i], parish[i]);
       <input type="text" name="identification" minlength="5" maxlength="5" class="form-control" required> <br> <br>
       <input id="log" type="submit" name="submit" value="Add" onclick="isValid()"> 
     </form> 
+      </div>
+    </div>
+     <div class="row">
+           <div class="col-md-12">
+      <h3 class="text-primary">Messages</h3>
+           <?php
+           include("config.php");
+            $sql = "SELECT id, email, message, sent_at from messages";
+             
+           $result = mysqli_query($conn, $sql);
+           
+           if(mysqli_num_rows($result) > 0){
+               echo"<table class='table table-dark'>";
+               echo"<tr> <th>ID</th> <th>Sent From</th>";
+               echo"<th>Message</th> <th>Sent On</th>";
+               echo"</tr>";
+               
+               while($row = mysqli_fetch_assoc($result)){
+                   echo"<tr>";
+                   echo"<td>".$row['id']."</td>";
+                   echo"<td>".$row['email']."</td>";
+                   echo"<td>".$row['message']."</td>";
+                   echo"<td>".$row['sent_at']."</td>";
+                   echo"</tr>";
+               }
+              echo"</table>"; 
+           } else{
+                   echo"No New Messages";
+               }
+            mysqli_close($conn);
+           ?>
   </div>
     </div>
-  
 <hr>
 <footer>
     <div class="row dark bg-light">
