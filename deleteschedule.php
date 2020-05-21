@@ -1,23 +1,21 @@
-<?php
-include("config.php");
-session_start();
+<?php include("config.php");
+    if(isset($_POST['allloc'])){
+      $sql = "TRUNCATE table location";
+      if(mysqli_query($conn, $sql)){
+        "<script> alert('All locations Deleted Succesfully'); </script>";  
+      }else{
+         echo "<script> alert('Opps, something went wrong!!'); </script>"; 
+      }
+  }
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-
-
-$sql ="TRUNCATE table schedule";
-
-$action = mysqli_query($conn, $sql);
-if ($action) {
-	echo "All schedules Deleted Successfully";
-} else{
-	echo "Something Went Wrong";
-
-}
+ if(isset($_POST['allsch'])){
+      $sql = "TRUNCATE table schedule";
+      if(mysqli_query($conn, $sql)){
+        "<script> alert('All Schedules Deleted Succesfully'); </script>";  
+      }else{
+         echo "<script> alert('Opps, something went wrong!!'); </script>"; 
+      }
+  }
 
 mysqli_close($conn);
-
-
 ?>
