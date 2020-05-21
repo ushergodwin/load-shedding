@@ -1,4 +1,4 @@
-<?php include("config.php"); include("location.php") ?>
+<?php include("config.php"); include("location.php"); include("messages.php"); ?>
 <html>
 <head>
    <meta charset="UTF-8">
@@ -93,21 +93,22 @@ window.onclick = function(event) {
     </div>
 
 <div id="id01" class="modal">
-  <form class="modal-content animate" action="/action_page.php" name="form1" method="post">
+  <form class="modal-content animate" action="index.php" name="form1" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
   <a href="tel:+256756809525"> <i class="fa fa-phone"></i> &nbsp; +256-756-809-525</a> 
       <p class="text-primary"> <i class="fa fa-envelope"> </i> &nbsp; +256784664867</p> 
     <div class="container">
+        <?php include("errors.php");?>
       <label for="email" class="control-lable"><b>Email</b></label>
  <input type="text" class="form-control" name="EmailAddress" placeholder="someone@example.com" required>
 
       <label for="text" class="control-label"><b>Simple Concern</b></label> <br>
-   <textarea cols="40" rows="3" class="form-control"></textarea>
+   <textarea cols="40" rows="3" class="form-control" name="message"></textarea>
     </div>
           <div class="container">
-    <button type="submit" class="btn btn-primary" onclick="ValidateEmail(document.form1.EmailAddress)">Send</button>
+    <button type="submit" class="btn btn-primary" name="send">Send</button>
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-outline-danger">Cancel</button>
       </div>
   </form>
