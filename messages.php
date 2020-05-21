@@ -23,13 +23,11 @@ $message =  mysqli_real_escape_string($conn, $_POST['message']);
     <strong>Success!</strong> Your message has been sent successfully.
     <button type='button' class='close' data-dismiss='alert'>&times;</button>
 </div>";
-            echo"<script> history.back(); </sceript>";
           } else{
              echo" <div class='alert alert-danger alert-dismissible fade show'>
     <strong>Error!</strong>Oops, Message Not Sent
     <button type='button' class='close' data-dismiss='alert'>&times;</button>
 </div>";
-            echo"<script> history.back(); </sceript>";
           }
       }
   }
