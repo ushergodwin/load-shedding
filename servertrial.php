@@ -1,15 +1,10 @@
 <?php 
 session_start();
-
-$conn = mysqli_connect("localhost", "root", "@Usher96", "LoadShedding");
-
-if(!$conn){
-	die("Connection Failed". mysqli_connect_error());
-}
+include("config.php");
 
 $username = "";
 $password = "";
-$password2 = "";
+$password_2 = "";
 $name = "";
 $contact = "";
 $address = "";
@@ -55,7 +50,7 @@ if (isset($_POST['submit'])) {
        array_push($errors, "Please enter Adress.");
     }
  
-    $sql = "SELECT * FROM Staff WHERE username = '$username' limit 1";   
+    $sql = "SELECT * FROM staff WHERE username = '$username' limit 1";   
 
 
     $results = mysqli_query($conn, $sql);
@@ -71,7 +66,7 @@ if (isset($_POST['submit'])) {
     if (count($errors) == 0) {
     	$password = md5($password);
 
-    	$sql = "INSERT INTO Staff(username, password, staffName, staffContact, staffAddress) VALUES ('$username', '$password', '$name', '$contact', '$address')";
+    	$sql = "INSERT INTO staff(username, password, staffName, staffContact, staffAddress) VALUES ('$username', '$password', '$name', '$contact', '$address')";
 
     	$query = mysqli_query($conn, $sql);
 
@@ -107,20 +102,19 @@ if (isset($_POST['submit'])) {
 
         	$password = md5($password);
 
-        	$sql = "SELECT * FROM Staff where username = '$username' and password = '$password'";
+        	$sql = "SELECT * FROM staff where username = '$username' and password = '$password'";
 
         	$results = mysqli_query($conn, $sql);
         	if (mysqli_num_rows($results) == 1) {
         		$_SESSION['username'] = $username;
         		$_SESSION['sussess'] = "you are logged in";
                 header("location: welcome.php");
-        	}else{
-            array_push($errors, "Oops, Account Not Found!!");
-            }
-        } 
+        	}else { 
+                array_push($errors, "something went wrong");
         }
- 
-
+        } 
+    	
+    }
 
 
 ?>
