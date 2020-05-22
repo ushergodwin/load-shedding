@@ -7,10 +7,19 @@
     <meta name="author" content="Tumuhimbise Usher Godwin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results - ugsheds</title>
-  <link rel="stylesheet" type="text/css" href="results.css">
   <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
-  <style type="text/css"> body{background-image: url("imgs/20200426_115448_edited.jpg");} th{color: blue; text-decoration: underline; font-size: 20px;}
- td{ font-family: sans-serif; font-size: 22px;} .footer{  background-color: #f5f5f5; width: auto; max-width: 100%; padding: 0 15px; }</style>
+    <link rel="stylesheet" type="text/css" href="register.css">
+<script src="shedding.js"> </script>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style type="text/css"> body{background-color: aliceblue;}  tr:nth-child(even){
+ 	background-color: #f2f2f2;
+ } th{color: blue; text-decoration: underline;}
+ td{ font-family: sans-serif; font-size: 22px;} </style>
 </head>
 <body>
   <?php
@@ -36,8 +45,8 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result)>0) 
 {
-
-echo "<table cellspacing='5'>";
+echo"<div class='table-responsive'>";
+echo "<table cellspacing='20' cellpadding='10'>";
 echo"<caption style = 'font-size: 20px; font-weight: bold; color: blue;'> Load Shedding Schedules</caption>";
 echo ("<tr> ");
 echo("<th>District</th>");
@@ -64,6 +73,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 echo("</table>");
+    echo"</div>";
 } else {
   echo "<script> alert('No Results Match Your Searched Location Please Try Seaching again!!!');</script>";
   echo "<script> history.back(); </script>";
@@ -72,25 +82,18 @@ mysqli_close($conn);
 ?>
 
 
- <br> <hr> <br>
-<div class="footer" align="center">
-    <table>
-      <caption> <h5 style="color: blue;">&copy BIST Group C LoadShedding 2020</h5></caption>
-      <tr style="color: blue;">
-    
-    <td ><a href="terms.php">Terms & Conditions</a></td>   <td ><a href="aboutus.php">Abou Us</a></td>
-    </tr>
-      <br> <br>
-  </table>
-
-
-  <table>
-    
-    <tr style="color: blue;">
-        
-        <td><h2>Load</h2></td> <td><img src="imgs/logo.jpg" width="70" height="50" style="border-radius: 20%"></td> <td><h2>Shedding</h2></td>
-      </tr>
-  </table>
-  </div>
+ <br> <hr>
+    <footer>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+      <p class="text-muted"> Copyright &copy BIST Group C LoadShedding 2020</p>
+        </div>
+        <div class="col-md-4">
+   <a href="terms.php">Terms & Conditions</a> | <a href="aboutus.php">Abou Us</a>
+        </div>
+        </div>
+    </footer>
+    </div>
 </body>
 </html>
