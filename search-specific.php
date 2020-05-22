@@ -16,9 +16,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <style type="text/css"> body{background-color: aliceblue;}  tr:nth-child(even){
+  <style type="text/css"> body{background-color: aliceblue;}  /*tr:nth-child(even){
  	background-color: #f2f2f2;
- } th{color: blue; text-decoration: underline;}
+ }*/ th{color: blue; text-decoration: underline;}
  td{ font-family: sans-serif; font-size: 22px;} </style>
 </head>
 <body>
@@ -46,8 +46,8 @@ $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result)>0) 
 {
 echo"<div class='table-responsive'>";
-echo "<table cellspacing='20' cellpadding='10'>";
-echo"<caption style = 'font-size: 20px; font-weight: bold; color: blue;'> Load Shedding Schedules</caption>";
+ echo"<h2 class='text-primary' style = 'text-align: center'> Load Shedding Schedules</h2>";
+echo "<table cellspacing='20' cellpadding='10' class='table table-dark'>";
 echo ("<tr> ");
 echo("<th>District</th>");
 echo("<th>Division</th>");
