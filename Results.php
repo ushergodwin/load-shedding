@@ -13,16 +13,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style type="text/css"> body{background-color: aliceblue}  tr:nth-child(even){
+    <style type="text/css"> body{background-color: aliceblue}  /*tr:nth-child(even){
  	background-color: #f2f2f2;
- }th{color: blue; text-decoration: underline;}
-    td{ font-family: sans-serif; font-size: 22px;} </style>
+ }*/th{color: blue; text-decoration: underline;}
+    td{ font-family: sans-serif; font-size: 20px;} </style>
 </head>
 <body>
 <a href='javascript:history.back();'> Go Back </a>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
 <?php include("config.php"); 
 $sql ="SELECT District, Division, Parish, schedule, Period, Period_2 from location LEFT JOIN schedule ON location.ID=schedule.ID";
 
@@ -30,8 +27,8 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result)>0) 
 {
-
-echo "<table cellspacing='20'>";
+echo"<div class='table-responsive'>";
+echo "<table cellspacing='20' cellpadding='10' class='table table-dark'>";
 echo "<tr> ";
 echo"<th>District</th>";
 echo"<th>Division</th>";
@@ -57,18 +54,19 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 echo"</table>";
+echo"</div>";
 } else {
 	echo "No Schedules Found! ";
 }
 mysqli_close($conn);
 ?>
-</div>
-        </div>
-        
+
+        <br> <hr>
+                <div class="container">
         <div class="row">
             <div class="col-md-6">
-            <p class="text-secondary">Please Delete all the schedules before adding new ones</p>
-                <p class="info">Make sure that all schedules have expired, then delete and add news.</p>
+            <p class="text-danger">Please Delete all the schedules before adding new ones</p>
+                <p class="text-danger">Make sure that all schedules have expired, then delete and add news.</p>
             </div>
         <div class="col-md-6">
             <label for="location">Delete All Locations</label>
