@@ -13,7 +13,7 @@
  
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL)
+error_reporting(E_ALL);
 ?>
  
 <!DOCTYPE html>
@@ -33,12 +33,18 @@ error_reporting(E_ALL)
     <link rel="stylesheet" type="text/css" href="shedding.css">
     <link rel="stylesheet" type="text/css" href="admin.css">
     <script type="text/javascript" src="shedding.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style type="text/css"> body{ font-family: 'Roboto', sans-serif; font-size: 18px;}  /* Style The Dropdown Button */
-.dropbtn { background-color: #4CAF50; color: white; padding: 16px; font-size: 16px; border: none; cursor: pointer;}
+.dropbtn { background-color: blue; color: white; padding: 16px; font-size: 12px; border: none; cursor: pointer; border-radius: 5px}
 /* The container <div> - needed to position the dropdown content */
 .dropdown { position: relative; display: inline-block;}
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content { display: none; position: absolute; background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);z-index: 1;}
+.dropdown-content { display: none; position: absolute; background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1;}
 /* Links inside the dropdown */
 .dropdown-content a {color: blue;padding: 12px 16px;
   text-decoration: none;display: block;}
@@ -47,32 +53,17 @@ error_reporting(E_ALL)
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn { background-color: #3e8e41;
- } li{list-style: none} .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: pointer; transition: 0.3s;} .closebtn:hover{color: red;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none} a{ font-size: 15px;} @media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-/* Styles */
-}/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-}/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* Styles */
-}   #sub{
-  background-color: #4CAF50; color: white;border: none;
-cursor: pointer; width: 15%;}
+.dropdown:hover .dropbtn { background-color: #3e8e41;} .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: pointer; transition: 0.3s;} .closebtn:hover{color: red;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none} a{ font-size: 15px;}
     </style>
 </head>
 <body>
-    <nav>
-
     <div class="dropdown" align="right">
   <button class="dropbtn">Menu</button>
   <div class="dropdown-content">
     <a href="registerschedule.php"> Add Schedule </a>
     <a href="Results.php">View Schedules</a>
-  <button type="button" style="background-color: black; border-radius: 50px" onclick="return confirm('SignOut of your Account?')"> <a href="welcome.php?logout='1'" style="color: red;">Logout</a> </button>
+    <a href="#" class="btn btn-outline-info" onclick="openForm()">Login As Admin</a>  
+   <a href="welcome.php?logout='1'"  class="btn btn-danger" onclick="return confirm('SignOut of your Account?')">Logout</a>
   </div>
 </div>
          <div class="alert" id="alert">
@@ -99,27 +90,30 @@ cursor: pointer; width: 15%;}
 
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
-    	<h2 style="color: blue; font-size: 30px">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h2> 
+    	<h2 class="text-success">Welcome <strong><?php echo $_SESSION['username']; ?></strong></h2> 
     <?php endif ?>
-	<script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script>
+          <p class="text-muted" style="text-align: right"><script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script> </p>
     </div>
-    <iframe src="contactadmin.php"  width="450" height="180" style="border: none;"></iframe>
-<p> As a Stuff Member You will  be <span style="color: blue"> able to add load shedding schedules <br> detailed with at what time</span>  will <span style="color: blue">power be OFF</span> in which area <br> and <span style="color: blue">when(day)</span> will the power be off.</p> </div>
-<div><p> All you need to do is to click on the <span style="color: blue"> <br>Menu Button</span> on the top left conner and select add schedule link to go to the page from where you can add load shedding schedules</p>
+        </div>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+<p> As a Stuff Member You will  be <span style="color: blue"> able to add load shedding schedules <br> detailed with at what time</span>  will <span style="color: blue">power be OFF</span> in which area <br> and <span style="color: blue">when(day)</span> will the power be off.</p>
+<p> All you need to do is to click on the <span style="color: blue"> <br>Menu Button</span> on the top left conner and select add schedule link to go to the page from where you can add load shedding schedules</p>
 <p>You can as well <span style="color: blue"> search </span> by typing the name of the location  to see whether the <span style="color: blue">updates have been made.</span> </p>
 </div>
-</nav>
- <div class="style" id="style">
-    <h4 style="color: blue;">Search from here</h4>
+<div class="col-md-4">
+ <div class="form-group">
+    <h4 class="text-primary">Search from here</h4>
   <form class="look" method="POST"  action="search-specific.php">
-   <input id="input-group" type="text" name=" parish" placeholder="Type your location here" title="Search for your location to know when power will be off" required="required"> &nbsp
-   <button type="submit" id="sub"><img src="imgs/search.jpg" id="pic"></button>
+   <input id="input-group" type="text" name=" parish" placeholder="Type your location here" title="Search for your location to know when power will be off" class="form-control" required>
+   <input type="submit" class="btn btn-primary" name="submit" value="Search">
    </form>
    </div>
-
+        </div>
+    </div>
+    </div>
    <div class="admin">
-    <button class="open-button" onclick="openForm()">Login As Admin</button>
-
 <div class="form-popup" id="myForm">
   <div class="form-container" onsubmit=" return admin()">
     <h1>Login</h1>
@@ -178,25 +172,19 @@ function admin() {
 }
  
 </script> 
-
-
- <br> <hr> <br>
-<div class="footer" align="center">
-    <table cellspacing='5'>
-      <tr><th colspan="4"><p style="color: whitesmoke; font-soze: 15px"> Copyright &copy BIST Group C LoadShedding 2020</p></th></tr>
-      <tr style="color: blue;">   
-          <td ><li><a href="terms.php">Terms & Conditions</a></li></td>  <td><li><a href="#" onclick="openAlert()" >Privacy Policy</a></li></td>
-          <td ><li><a href="aboutus.php">Abou Us</a></li></td>
-          <td><li><a href="#Top"> Back To Top </a></li></td>
-    <tr>
-      <br> <br>
-  </table>
-  <table>
-     <tr style="color: whitesmoke;">
-        <td><p>Load</p></td> <td><img src="imgs/logo.jpg" width="70" height="50" style="border-radius: 20%"></td> <td><p>Shedding</p></td>
-      </tr>
-  </table>
-  </div> 
+<hr> 
+<div class="container">
+    <footer>
+    <div class="row">
+        <div class="col-md-6">
+  <p class="text-muted"> Copyright &copy BIST Group C LoadShedding 2020</p>
+        </div>
+        <div class="col-md-6">
+<a href="terms.php">Terms & Conditions</a> &nbsp;| &nbsp;<a href="#" onclick="openAlert()"> Privacy Policy</a> &nbsp;| &nbsp;<a href="aboutus.php">About us</a>
+        </div>
+  </div>
+    </footer>
+    </div>
 </body>
 </html>
 
