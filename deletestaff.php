@@ -1,3 +1,4 @@
+<?php include("delete.php");?>
 <html>
 <head>
    <meta charset="UTF-8">
@@ -7,15 +8,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
          <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <title> Staff Details - ugsheds</title>
-  <style type="text/css"> form,content{ border: 10px solid grey; width: 40%; padding: 10px; border-radius: 5px; } #log{ background-color: blue; width: 70px; padding: 10px; color: white; border-radius: 8px;} #log:hover{ cursor: pointer; background-color: red; } .input-group input{border-radius: 5px; height: 40px;} .input-group{margin: 10px 10px 10px 10px;} </style>
+  <style type="text/css"> form,content{ padding: 10px;} #log{ background-color: blue; width: 70px; padding: 10px; color: white; border-radius: 8px;} #log:hover{ cursor: pointer; background-color: red; } .input-group input{border-radius: 5px; height: 40px;} .input-group{margin: 10px 10px 10px 10px;} </style>
    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
 </head>
-
-
+<body>
+     <nav class="navbar"> 
+         <a href="welcome.php">HOME</a>
+    </nav>
+    <div class="container">
+    <div class="row">
+         <div class="col-md-4">
+        <h4 class="text-primary">Staff Details</h4>
 <?php include("config.php");
-     $sql = "SELECT id, username, staffName, staffContact, staffAddress FROM Staff";
+     $sql = "SELECT id, username, staffName, staffContact, staffAddress FROM staff";
 
           $result = mysqli_query($conn, $sql);
           if (mysqli_num_rows($result)> 0) {
@@ -39,61 +51,90 @@
       }
   mysqli_close($conn)
      ?>
-
-<body>
-    <nav> <a href="welcome.php">HOME</a></nav>
-<div id="short">
-		<p style="font-size: 18px; font-weight: bold;">Delete Staff</p>
+     </div>
+        <div class="col-md-4">
+    	<p class="text-warning">Delete Staff</p>
+            <?php include("errors.php"); ?>
 		<form method="post" name="form1" action="delete.php" onsubmit=" return confirm('Delete Staff? \n Action can not be undone!!');">
-			<div class="input-group">
-			<label style="font-size: 20px; font-weight: bold;">Enter ID</label> <br> <br>
-			<input id="nice" type="text" name="id" placeholder="enter id" required="required"> <br> <br>
-  
+			<div class="form-group">
+			<label for="id" class="control-label">Enter ID</label> <br>
+			<input id="nice" type="text" name="id" placeholder="enter id" class="form-control" required="required"> <br>
 		</div>
-			<input id="log" type="submit" name="submit" value="Delete">
+<input id="log" type="submit" name="submit" value="Delete">
 		</form>
-
-  
-</div>
-
-<div id="short">
-    <p style="font-size: 18px; font-weight: bold;">Update Staff's Address </p>
+        </div>
+        
+    <div class="col-md-4">
+    <p class="text-info">Update Staff's Address </p>
     <form method="post" name="form1" action="update.php" onsubmit=" return confirm('Update Staff Address?');">
-      <div class="input-group">
-      <label style="font-size: 20px; font-weight: bold;">Enter New Address</label> <br> <br>
-      <input id="nice" type="text" name="address" placeholder="enter password" required> <br> <br>
+      <div class="form-group">
+      <label for="address" class="contol-label">Enter New Address</label> <br>
+      <input id="nice" type="text" name="address" placeholder="enter password" class="form-control" required> <br>
     </div>
-    <div class="input-group">
-      <label style="font-size: 20px; font-weight: bold;">Enter ID</label> <br> <br>
-      <input id="nice" type="text" name="id" placeholder="enter password" required> <br> <br>
-    </div>
-  
+    <div class="form-group">
+      <label for="id" class="control-label">Enter ID</label> <br>
+      <input id="nice" type="text" name="id" placeholder="enter password" class="form-control" required> <br>
     </div>
       <input id="log" type="submit" name="submit" value="Update">
     </form>
-  
-   <br> <hr> <br>
-<div class="footer" align="center">
-    <table>
-      <caption> <h5 style="color: blue;">&copy BIST Group C LoadShedding 2020</h5></caption>
-      <tr style="color: blue;">
-    
-     <td ><a href="terms.php">Terms & Conditions</a></td>   <td ><li><a href="aboutus.php">Abou Us</a></li></td>
-    <tr>
-      <br> <br>
-  </table>
-
-
-  <table>
-    
-    <tr style="color: blue;">
-        
-        <td><h2>Load</h2></td> <td><img src="imgs/logo.jpg" width="70" height="50" style="border-radius: 20%"></td> <td><h2>Shedding</h2></td>
-      </tr>
-  </table>
+    </div>
+    </div>
+     <div class="row">
+        <div class="col-md-10">
+      <h3 class="text-primary">Messages</h3>
+           <?php
+           include("config.php");
+            $sql = "SELECT id, email, message, sent_at from messages";
+             
+           $result = mysqli_query($conn, $sql);
+           
+           if(mysqli_num_rows($result) > 0){
+               echo"<table class='table table-dark'>";
+               echo"<tr> <th>ID</th> <th>Sent From</th>";
+               echo"<th>Message</th> <th>Sent On</th>";
+               echo"</tr>";
+               
+               while($row = mysqli_fetch_assoc($result)){
+                   echo"<tr>";
+                   echo"<td>".$row['id']."</td>";
+                   echo"<td>".$row['email']."</td>";
+                   echo"<td>".$row['message']."</td>";
+                   echo"<td>".$row['sent_at']."</td>";
+                   echo"</tr>";
+               }
+              echo"</table>"; 
+           } else{
+                   echo"No New Messages";
+               }
+            mysqli_close($conn);
+           ?>
   </div>
-  
-</div>
+         <div class="col-md-2">
+             <h5 class="text-warning">Delete Message</h5>
+             <?php include("errors.php"); ?>
+             <form action="deletestaff.php" method="post" onsubmit=" return confirm('Delete Message? \n Action can not be undone!!');">
+             <label for="id" class="control-label">Enter Message ID</label>
+                 <input type="number" name="mess" class="form-control"> <br>
+                <button type="submit" class="btn btn-danger" name="del">Delete</button> 
+             </form>
+             <label for="all">Delete All Messages</label>       <form action="deletestaff.php" method="post" onsubmit=" return confirm('Delete All Messages? \n Action can not be undone!!');">
+             <input type="submit" class="btn btn-danger" name="all" value="Delete">
+             </form>
+         </div>
+    </div>   
+    <hr>
+    <footer>
+        <div class="row">
+          <div class="col-md-8"> 
+   <p class="text-muted"> Copyright &copy BIST Group C LoadShedding 2020</p>
+            </div>
+            <div class="col-md-4">
+    <a href="terms.php">Terms & Conditions</a> |
+          <a href="aboutus.php">Abou Us</a>
+            </div>
+      </div>
+  </footer>
+  </div>
 
 </body>
 </html>
