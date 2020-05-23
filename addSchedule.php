@@ -7,15 +7,6 @@ $District = "";
 $Division = "";
 $Parish = "";
 $errors = array();
-
-$conn = mysqli_connect($servername, $username, $password);
-$dbname = mysqli_select_db($conn, "LoadShedding");
-
-if (!$conn) {
-    die("Connection Failed" . mysqli_connect_error());
-}
-
-
 if (isset($_POST['reg_loc'])) {
 
     $ID = mysqli_real_escape_string($conn, $_POST['identification']);
