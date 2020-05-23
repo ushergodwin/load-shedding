@@ -70,7 +70,7 @@ display: block;float: none;}
             <a href="https://twitter.com/usherTgodwin" class="fa fa-twitter" style=" background: #55ACEE;
   color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a>
             <a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="color:blue; font-size: 30px;" ></a> &nbsp; &nbsp;
-<a href="https://api.whatsapp.com/send?phone=+256756809525" class="fa fa-whatsapp" style="color:green; font-size: 30px;"></a>
+<a href="https://wa.link/38riyu" class="fa fa-whatsapp" style="color:green; font-size: 30px;"></a>
         </div> &nbsp;&nbsp;
         <form class="form-inline ml-auto" method="post" action="search-specific.php">
                 <input type="text" class="form-control mr-sm-2" placeholder="Search..." name="parish" required><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
