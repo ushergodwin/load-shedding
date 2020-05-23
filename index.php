@@ -170,7 +170,7 @@ window.onclick = function(event) {
        <div class="card-body">
            <div class="card-text-white bg-light">
          <h4 class="card-header">NO MORE WORRIES</h4>
-            <p class="text-success">With Our load shedding system, you can know when power will be off from your area so that you can prepare in advance for power outges! It's just a single search with the name of your location.</p>
+            <p class="text-success">With Our load shedding susytem, you can know when power will be off from your area so that you can prepare in advance for power outges! It's just a single search with the name of your location.</p>
         <p class="card-footer text-muted">Enjoy the service</p>
            </div>
     </div>
