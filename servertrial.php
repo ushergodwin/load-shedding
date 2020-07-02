@@ -64,18 +64,17 @@ if (isset($_POST['submit'])) {
 
 
     if (count($errors) == 0) {
-    	$password = md5($password);
+    	$hash = password_hash($password, PASSWORD_DEFAULT);
 
-    	$sql = "INSERT INTO staff(username, password, staffName, staffContact, staffAddress) VALUES ('$username', '$password', '$name', '$contact', '$address')";
+    	$sql = "INSERT INTO staff(username, password, staffName, staffContact, staffAddress) VALUES ('$username', '$hash', '$name', '$contact', '$address')";
 
     	$query = mysqli_query($conn, $sql);
 
     	if($query){
-
-    		$_SESSION['username'] = $username;
-    		$_SESSION['sussess'] = "you are logged in";
-    		header("location: welcome.php");
-    	}else{ echo "Oops, something went wrong".$sql."".mysqli_error($conn);}
+    		header("location: login.php");
+    	}else{
+            array_push($errors, "Oops, something went wrong");
+        }
     }
 
 }
@@ -99,13 +98,11 @@ if (isset($_POST['submit'])) {
 
 
         if(count($errors) == 0){
-
-        	$password = md5($password);
-
-        	$sql = "SELECT * FROM staff where username = '$username' and password = '$password'";
+        	$sql = "SELECT username, password FROM staff where username = '$username'";
 
         	$results = mysqli_query($conn, $sql);
-        	if (mysqli_num_rows($results) == 1) {
+            $verify = mysqli_fetch_assoc($results);
+        	if (mysqli_num_rows($results) == 1 && password_verify($password, $verify['password'])) {
         		$_SESSION['username'] = $username;
         		$_SESSION['sussess'] = "you are logged in";
                 header("location: welcome.php");

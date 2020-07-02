@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
         }
 
          
-        $sql = "UPDATE Staff SET staffAddress = '".$Address."' WHERE ID = '".$ID."'";
+        $sql = "UPDATE staff SET staffAddress = '".$Address."' WHERE ID = '".$ID."'";
         if (mysqli_query($conn, $sql)) {
           echo "<script> alert('Address Updated Succesfully'); </script>";
           echo "<script> history.back()</script>";

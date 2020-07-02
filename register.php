@@ -12,70 +12,69 @@
 <script src="js/bootstrap.min.js"></script>
   <title>Register Staff - ugsheds</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="shedding.js"></script>
+    <script src="js/shedding.js"></script>
 <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style type="text/css"> .control-label{color: aliceblue } .header{ width: 100%}</style>
-    <script>
-// Self-executing function
-(function() {
-    'use strict';
-    window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
-</script>
+    <style type="text/css"> .control-label, label{color: aliceblue }.card-body{
+            background-image: url(imgs/header.jpg); border-radius: 5px; border-top-left-radius: 2px; border-top-right-radius: 2px;
+        } .card-footer{color: aliceblue}.card-header{text-align: center} span{color: crimson; font-family: monospace; background-color: aliceblue; border-radius: 3px}</style>
 </head>
 <body>
 	<div class="container">
-         <div class="header">
+ <div class="row justify-content-center">
+         <div class="col-md-6 col-sm-12 col-lg-8">
+             <div class="card">
+                 <div class="card-header">
   	<h2>REGISTER</h2>
-  </div>
-  <form class="needs-validation" method="post" action="register.php" novalidate>
+                 </div>
+                 <div class="card-body">
+  <form class="needs-validation" method="post" action="register.php" name="account" novalidate>
   	<?php include("errors.php");?>
       <div class="form-group">
   		<label for="username" class="control-label">Username</label><br>
-  		<input type="text" name="username" class="form-control" value="<?php echo $username; ?>" required>
+  		<input type="text" name="username" class="form-control" value="<?php echo $username; ?>" required><br>
+          <span id="name"></span>
       </div>
       <div class="form-group">
   		<label for="password" class="control-label">Password</label><br>
-  		<input type="password" name="password" class="form-control" value="<?php echo $password; ?>" required>
+  		<input type="password" name="password" class="form-control" value="<?php echo $password; ?>" required><br>
+          <span id="pass"></span>
       </div>
       <div class="form-group">
       <label for="password" class="control-label">Confirm Password</label><br>
-          <input type="password" name="password_2" class="form-control" value="<?php echo $password_2; ?>" required></div>
+          <input type="password" name="password_2" class="form-control" value="<?php echo $password_2; ?>" required><br>
+          <span id="conf"></span>
+      </div>
       <div class="form-group">
     	<label for="username" class="control-label">Staff Name</label><br>
-          <input type="text" name="name" class="form-control" required> </div>
+          <input type="text" name="name" class="form-control" required> <br>
+      <span id="sname"></span>
+      </div>
       <div class="form-group">
       <label for="contact" class="control-label">Staff Contact</label><br>
-  		<input type="number" name="contact" class="form-control" value="<?php echo $contact; ?>" required>
+  		<input type="number" name="contact" class="form-control" value="<?php echo $contact; ?>" required><br>
+          <span id="cont"></span>
       </div>
       <div class="form-group">
       	<label for="address" class="control-label">Staff Address</label><br>
-          <input type="text" name="address" class="form-control" value="<?php echo $address; ?>" required></div>
-      <div class="form-group">
-<button type="submit" class="btn btn-primary" name="submit">Register</button>
-  	<p>
-Already a Staff Member? <a href="login.php" class="btn btn-outline-light">Login</a>
-  	</p>
+          <input type="text" name="address" class="form-control" value="<?php echo $address; ?>" required><br>
+      <span id="add"></span>
       </div>
-  </form>
+      <div class="form-group">
+<button type="submit" class="btn btn-primary" name="submit" onclick="return validateAccount();">Register</button>
+      </div>
+      <div class="card-footer">
+Already a Staff Member? &nbsp; &nbsp;<a href="login.php" class="btn btn-outline-light btn-sm">Login</a>
+      </div>
+     </form>
     </div>
+         </div>
+    </div>
+    </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

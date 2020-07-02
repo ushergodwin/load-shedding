@@ -6,19 +6,13 @@
     <meta name="keywords" content="load shedding, power cut off , Uganda, BIST2019/2019, cocis news, BIST cocis">
     <meta name="author" content="Tumuhimbise Usher Godwin">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 	<title>Home - ugsheds</title>
    <link rel="shortcut icon" type="image/x-icon" href="imgs/favicon.ico">
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<link rel="stylesheet" type="text/css" href="shedding.css">
+	<link rel="stylesheet" type="text/css" href="css/shedding.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style type="text/css">
     <style type="text/css"> .closebtn{margin-left: 15px; color: white; font-weight: bold; font-size: 22; line-height: 20px; cursor: hand; transition: 0.3s;} .closebtn:hover{color: yellow;} .alert{padding: 20px; background-color: #f44336; color: white; margin-bottom: 15px;} #alert{ display: none; max-width: 100% } a{ font-size: 15px;} #icon-bar{top: 50px; position: fixed; display: inline-block;margin-left: 20px; }
         
@@ -51,11 +45,13 @@ span.psw {float: right;padding-top: 16px;}
 /* Change styles for span and cancel button on extra small screens */@media screen and (max-width: 300px) {span.text {
 display: block;float: none;}
   .cancelbtn { width: 100%; }}
-    #top{ text-align: center}</style>
-		<script src="shedding.js"></script>
+    #top{ text-align: center} span{color: red; font-family: monospace}</style>
+		<script src="js/shedding.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
     <a href="#" class="navbar-brand">LOAD SHEDDING</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -68,15 +64,15 @@ display: block;float: none;}
             <a href="#" class="nav-item nav-link" onclick="document.getElementById('id01').style.display='block'">Contact Us</a> &nbsp; &nbsp;
              <abbr title="COCIS NEWS"> <a href="https://cocis.news/" style="color:red"> <img src="imgs/cocis.png" style="height: 40px; width: 40px; border-radius: 5px;" alt="COCIS NEWS"></a> </abbr> &nbsp; &nbsp;
             <a href="https://twitter.com/usherTgodwin" class="fa fa-twitter" style=" background: #55ACEE;
-  color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a>
+  color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a> &nbsp;&nbsp;
             <a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="color:blue; font-size: 30px;" ></a> &nbsp; &nbsp;
 <a href="https://wa.link/38riyu" class="fa fa-whatsapp" style="color:green; font-size: 30px;"></a>
-        </div> &nbsp;&nbsp;
+        </div> &nbsp;&nbsp; 
         <form class="form-inline ml-auto" method="post" action="search-specific.php">
-                <input type="text" class="form-control mr-sm-2" placeholder="Search..." name="parish" required><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
+                <input type="search" class="form-control mr-sm-2" placeholder="Search..." name="parish" required><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
         </form>    
     </div>
-</nav>
+</nav>   
     <div class="card">
      <div class="alert" id="alert">
             <script>  function openAlert() {
@@ -93,22 +89,23 @@ window.onclick = function(event) {
     </div>
 
 <div id="id01" class="modal">
-  <form class="modal-content animate" action="index.php" name="form1" method="post">
+  <form class="modal-content animate" action="index.php" name="messages" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
   <a href="tel:+256756809525"> <i class="fa fa-phone"></i> &nbsp; +256-756-809-525</a> 
       <p class="text-primary"> <i class="fa fa-envelope"> </i> &nbsp; +256784664867</p> 
     <div class="container">
+        <span id="error"></span><br>
         <?php include("errors.php");?>
       <label for="email" class="control-lable"><b>Email</b></label>
- <input type="text" class="form-control" name="EmailAddress" placeholder="someone@example.com" required>
+ <input type="email" class="form-control" name="EmailAddress" placeholder="someone@example.com" required>
 
       <label for="text" class="control-label"><b>Simple Concern</b></label> <br>
-   <textarea cols="40" rows="3" class="form-control" name="message"></textarea>
+   <textarea cols="40" rows="3" class="form-control" name="message"  required></textarea>
     </div>
           <div class="container">
-    <button type="submit" class="btn btn-primary" name="send">Send</button>
+    <button type="submit" class="btn btn-primary" name="send" onclick="return ValidateEmail();">Send</button>
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-outline-danger">Cancel</button>
       </div>
   </form>
@@ -130,14 +127,16 @@ window.onclick = function(event) {
 <p> All you need to do is type your <span style="color: blue">location </span> in the <span style="color: blue">search box </span> bellow and you will be good to go!</p> 
 <h4 style="color: blue;"><script type="text/javascript"> var toDay = new Date(); document.write(toDay);</script></h4>
     </div>
+<div class="row">
+<div class="col-md-6 col-lg-4">    
  <div class="card-group">
      <div class="card">
      <div class="card-body">
          <div class="card-text-white bg-light">
   <h4 class="card-title text-primary">Search from here</h4>
-  <form method="POST"  action="search-specific.php">
+  <form method="POST"  action="search-specific.php" name="searchForm" onsubmit="return search();"> 
       <div class="form-group">
-   <input id="input-group" type="text" name="parish" placeholder="Type your location here" title="Search for your location, only Letters allowed" required class="form-control">
+   <input id="input-group" type="search" name="parish" placeholder="Type your location here" title="Search for your location, only Letters allowed" required class="form-control"><span id="search"></span>
       </div>
    <button type="submit" class="btn btn-primary"> <i class="fa fa-search"></i> &nbsp;Search</button>
    </form>
@@ -145,7 +144,9 @@ window.onclick = function(event) {
          </div>
      </div>
    </div>
-   
+    </div>
+    </div>
+   <div class="col-md-6 col-lg-4">
    <div class="card">
        <div class="card-body">
            <div class="card-text-white bg-light">
@@ -154,27 +155,30 @@ window.onclick = function(event) {
            </div>
     </div>
      </div>
-     
+    </div>
+     <div class="col-md-6 col-lg-4">
         <div class="card">
        <div class="card-body">
          <h4 class="card-header">IMPORTANT!</h4>
            <div class="card-text bg-light">
-           <h5 class="card-title">WHY KNOW ABOUT POWER OUTAGE SCHEDULES</h5>
-        <p class="text-warning">In most cases, we are disturbed when power goes off! perhaps you are replying to an important email, you are making an order for your favorite product, you are writing the breakthrough of your software..and many other instances. When powers goes off without your knowledge, you surely get stack and frastrated</p>
+           <h6>WHY KNOW ABOUT POWER OUTAGE SCHEDULES</h6>
+        <p class="text-warning"> In most cases, we are disturbed when power goes off! perhaps you are replying to an important email, you are making an order for your favorite product, you are writing the breakthrough of your software..and many other instances. When powers goes off without your knowledge, you surely get stack and frastrated</p>
                <p class="card-footer text-muted">Dont get stack</p>
            </div>
             </div>
      </div>
-           
+       </div>
+           <div class="col-md-6 col-lg-4">
             <div class="card">
        <div class="card-body">
            <div class="card-text-white bg-light">
          <h4 class="card-header">NO MORE WORRIES</h4>
-            <p class="text-success">With Our load shedding susytem, you can know when power will be off from your area so that you can prepare in advance for power outges! It's just a single search with the name of your location.</p>
+            <p class="text-success">With Our load shedding system, you can know when power will be off from your area so that you can prepare in advance for power outges! It's just a single search with the name of your location.</p>
         <p class="card-footer text-muted">Enjoy the service</p>
            </div>
     </div>
      </div>
+       </div>
     </div>
     <div class="container">
 <div class="form-popup" id="myForm">
@@ -214,6 +218,17 @@ function conf() {
     return false;
   }
 }
+    function search(){
+        var se = document.searchForm.parish;
+        var reg = /^[a-zA-Z ]+$/;
+        if(!se.value.match(reg)){
+            var err = document.getElementById("search").innerHTML = "Enter a location";
+            se.focus();
+            return false;
+        }else{
+            return true;
+        }
+    }
 </script>
 
  <hr> 
@@ -229,5 +244,8 @@ function conf() {
   </div>
     </footer>
     </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </body>
 </html>

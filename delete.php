@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
           array_push($errors, "Plase Enter ID and try again");
         }
      if(count($errors)==0){
-        $sql = "DELETE FROM Staff WHERE ID = $ID";
+        $sql = "DELETE FROM staff WHERE ID = $ID";
         if (mysqli_query($conn, $sql)) {
           echo "<script> alert('Staff Deleted Succesfully'); </script>";
           echo "<script> history.go(-1); </script>";

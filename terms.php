@@ -1,15 +1,41 @@
 <html>
     <heda>
-        <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
     <title>Terms & conditions - ugsheds</title>
          <meta name="description" content="Terms and conditions of ugsheds">
     <meta name="author" content="Tumuhimbise Usher Godwin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="icon" href="imgs/favicon.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
         <style type="text/css"> body{ background-color: aliceblue; font-family: 'Roboto', sans-serif  } div{ max-width: 100% } .header1{text-align: center} </style>
     </heda>
 
     <body>
+         <nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
+    <a href="#" class="navbar-brand">LOAD SHEDDING</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="index.php" class="nav-item nav-link active">Home</a>
+            <a href="aboutus.php" class="nav-item nav-link">About</a>
+ &nbsp; &nbsp;
+             <abbr title="COCIS NEWS"> <a href="https://cocis.news/" style="color:red"> <img src="imgs/cocis.png" style="height: 40px; width: 40px; border-radius: 5px;" alt="COCIS NEWS"></a> </abbr> &nbsp; &nbsp;
+            <a href="https://twitter.com/usherTgodwin" class="fa fa-twitter" style=" background: #55ACEE;
+  color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a> &nbsp;&nbsp;
+            <a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="color:blue; font-size: 30px;" ></a> &nbsp; &nbsp;
+<a href="https://wa.link/38riyu" class="fa fa-whatsapp" style="color:green; font-size: 30px;"></a>
+        </div> &nbsp;&nbsp; 
+        <form class="form-inline ml-auto" method="post" action="search-specific.php">
+                <input type="search" class="form-control mr-sm-2" placeholder="Search..." name="parish" required><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
+        </form>    
+    </div>
+</nav>
     <div class="header1">
         <h1>Terms & Conditions of Servive</h1>
         </div>
@@ -73,5 +99,8 @@ ugsheds from the User</li></ol>
 <table> <tr><th>THE END</th></tr>
             </table>            
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>

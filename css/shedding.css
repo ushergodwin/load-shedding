@@ -1,0 +1,192 @@
+body{
+background-color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+
+	box-sizing: border-box;
+}
+
+form.look input[type=text]{
+
+	padding: 10px;
+	font-size: 17px;'
+    border: 1px solid grey;
+    float: left;
+    max-width: 100%;
+    background: #f1f1f1;
+    height: 50px;
+    border-radius: 5px;
+}
+
+
+form.look button{
+
+	padding: 10px;
+  font-size: 18px;
+  background: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  width: 5px
+}
+
+form.look button:hover{
+	background: #5F9EA0;
+	 cursor: pointer;
+}
+#pic{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+#h1{
+	text-align: center;
+}
+
+#td{
+	height: 30px;
+	width: 40%;
+	
+	border-radius: 5px;
+	border: 1px solid gray;
+	text-align: center;
+	margin-left: 50px;
+}
+
+td{
+	border: none;
+}
+caption{
+	font-weight: bold;
+	font-size: 25px;
+}
+
+a{
+	text-decoration: none;
+	color: blue;
+}
+h6{
+	color: grey;
+}
+
+nav{
+	background-color: whitesmoke;
+	border-radius: 5px;
+}
+
+#style{
+max-width: 100%;
+	padding: 20px;
+	border: 10px solid #B0C4DE;
+	border-radius: 10px 10px 10px 10px;
+	background-color: whitesmoke;
+
+}
+
+#log:hover{
+	color: white;
+	cursor: pointer;
+  font-weight: bold;
+  font-size: 20px
+
+}
+
+#log{
+  padding: 10px;
+  font-size: 18px;
+  background: #5F9EA0;
+  border: none;
+  border-radius: 5px;
+  width: 25%;
+}
+}
+
+#dtb:hover{
+	color: white;
+	cursor: pointer;
+  font-weight: bold;
+  font-size: 20px
+
+}
+
+#dtb{
+  padding: 10px;
+  font-size: 18px;
+  background: #5F9EA0;
+  border: none;
+  border-radius: 5px;
+  width: 9%;
+  color: white;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+  /* Style The Dropdown Button */
+.dropbtn {color: white; padding: 16px; font-size: 12pt; border: none; cursor: pointer; border-radius: 5px}
+/* The container <div> - needed to position the dropdown content */
+.dropdown { position: relative; display: inline-block;}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content { display: none; position: absolute; background-color: #f9f9f9;min-width: 160px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; border-radius: 3px;}
+/* Links inside the dropdown */
+.dropdown-content a {color: blue;padding: 12px 16px;
+  text-decoration: none;display: block;}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+ .closebtn{color: white; font-weight: bold; font-size: 20pt; line-height: 20px; cursor: pointer; transition: 0.3s;}
+.closebtn:hover{color: red;} 
+.alert{padding: 20px; color: white; margin-bottom: 15px;}
+#alert{ display: none} 
+a{ font-size: 15px;} span{color: red; font-family: monospace} .logo{color: gray; font-size: 20pt;}.logo:hover{text-decoration: none;} #big{font-size: 15pt} na{border-radius: 5px;} h5{text-align: right} .nav-link{font-size: 15pt}
+ /*tr:nth-child(even){
+ 	background-color: #f2f2f2;
+ }*/th{color: whitesmoke; text-decoration: underline;}
+    td{ font-family: sans-serif; font-size: 20px;} 

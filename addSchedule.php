@@ -36,7 +36,7 @@ if (isset($_POST['reg_loc'])) {
             echo " <script> alert('Location Added Successfully'); </script>";
             echo "<script> history.reload(); </script>";
         } else {
-            array_push($errors, "Registration Failed");
+            array_push($errors, "Oops, Registration Failed");
         }
     }
 }
