@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
 
 
         if(count($errors) == 0){
-        	$sql = "SELECT username, password FROM Staff where username = '$username'";
+        	$sql = "SELECT username, password FROM staff where username = '$username'";
 
         	$results = mysqli_query($conn, $sql);
             $verify = mysqli_fetch_assoc($results);
