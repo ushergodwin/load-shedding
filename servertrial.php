@@ -102,7 +102,8 @@ if (isset($_POST['submit'])) {
 
         	$results = mysqli_query($conn, $sql);
             $verify = mysqli_fetch_assoc($results);
-        	if (mysqli_num_rows($results) == 1 && password_verify($password, $verify['password'])) {
+            $true = password_verify($password, $verify['password']);
+        	if (mysqli_num_rows($results) == 1 && $true) {
         		$_SESSION['username'] = $username;
         		$_SESSION['sussess'] = "you are logged in";
                 header("location: welcome.php");
