@@ -21,7 +21,7 @@
     </nav>
     <div class="container">
     <div class="row">
-         <div class="col-md-4">
+         <div class="col-md-12 col-lg-12">
         <h4 class="text-primary">Staff Details</h4>
 <?php include("config.php");
      $sql = "SELECT id, username, staffName, staffContact, staffAddress FROM staff";
@@ -29,7 +29,7 @@
           $result = mysqli_query($conn, $sql);
           if (mysqli_num_rows($result)> 0) {
             
-               echo "<table border='1'> <tr> <th>ID </th>  <th>Username </th>  <th>Staff Name </th> <th>Staff Contact </th> <th>Adress </th></tr>";
+               echo "<table border='1' cellpadding='10'> <tr> <th>ID </th>  <th>Username </th>  <th>Staff Name </th> <th>Staff Contact </th> <th>Adress </th></tr>";
 
                while ($row = mysqli_fetch_assoc($result)) {
 
@@ -49,7 +49,9 @@
   mysqli_close($conn)
      ?>
      </div>
-        <div class="col-md-4">
+        </div>
+        <div class="row">
+        <div class="col-md-6 col-lg-6">
     	<p class="text-warning">Delete Staff</p>
             <?php include("errors.php"); ?>
 		<form method="post" name="form1" action="delete.php" onsubmit=" return confirm('Delete Staff? \n Action can not be undone!!');">
@@ -61,7 +63,7 @@
 		</form>
         </div>
         
-    <div class="col-md-4">
+    <div class="col-md-6 col-lg-6">
     <p class="text-info">Update Staff's Address </p>
     <form method="post" name="form1" action="update.php" onsubmit=" return confirm('Update Staff Address?');">
       <div class="form-group">
@@ -77,7 +79,7 @@
     </div>
     </div>
      <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-8">
       <h3 class="text-primary">Messages</h3>
            <?php
            include("config.php");
@@ -106,7 +108,7 @@
             mysqli_close($conn);
            ?>
   </div>
-         <div class="col-md-2">
+         <div class="col-md-4">
              <h5 class="text-warning">Delete Message</h5>
              <?php include("errors.php"); ?>
              <form action="deletestaff.php" method="post" onsubmit=" return confirm('Delete Message? \n Action can not be undone!!');">
