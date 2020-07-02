@@ -98,7 +98,7 @@ if (isset($_POST['submit'])) {
 
 
         if(count($errors) == 0){
-        	$sql = "SELECT username, password FROM staff where username = '$username'";
+        	$sql = "SELECT username, password FROM Staff where username = '$username'";
 
         	$results = mysqli_query($conn, $sql);
             $verify = mysqli_fetch_assoc($results);
@@ -107,7 +107,7 @@ if (isset($_POST['submit'])) {
         		$_SESSION['sussess'] = "you are logged in";
                 header("location: welcome.php");
         	}else { 
-                array_push($errors, "wrong username or password!".mysqli_error($conn));
+                array_push($errors, "wrong username or password!");
         }
         } 
     	
