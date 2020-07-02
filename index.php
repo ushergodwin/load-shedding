@@ -45,12 +45,18 @@ span.psw {float: right;padding-top: 16px;}
 /* Change styles for span and cancel button on extra small screens */@media screen and (max-width: 300px) {span.text {
 display: block;float: none;}
   .cancelbtn { width: 100%; }}
-    #top{ text-align: center} span{color: red; font-family: monospace}</style>
+    #top{ text-align: center} span{color: red; font-family: monospace} @media and screen(max-width: 991px){
+        #hidef{
+            display: none;
+        }
+    </style>
 		<script src="js/shedding.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
 <nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
     <a href="#" class="navbar-brand">LOAD SHEDDING</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -68,11 +74,13 @@ display: block;float: none;}
             <a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="color:blue; font-size: 30px;" ></a> &nbsp; &nbsp;
 <a href="https://wa.link/38riyu" class="fa fa-whatsapp" style="color:green; font-size: 30px;"></a>
         </div> &nbsp;&nbsp; 
-        <form class="form-inline ml-auto" method="post" action="search-specific.php">
+        <form class="form-inline ml-auto" method="post" action="search-specific.php" id="hidef">
                 <input type="search" class="form-control mr-sm-2" placeholder="Search..." name="parish" required><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
         </form>    
     </div>
-</nav>   
+</nav>
+        </div>
+        </div>
     <div class="card">
      <div class="alert" id="alert">
             <script>  function openAlert() {
