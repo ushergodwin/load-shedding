@@ -45,19 +45,16 @@ span.psw {float: right;padding-top: 16px;}
 /* Change styles for span and cancel button on extra small screens */@media screen and (max-width: 300px) {span.text {
 display: block;float: none;}
   .cancelbtn { width: 100%; }}
-    #top{ text-align: center} span{color: red; font-family: monospace} @media and screen(max-width: 991px){
-        #hidef{
-            display: none;
-        }
+    #top{ text-align: center} span{color: red; font-family: monospace} 
     </style>
 		<script src="js/shedding.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
     <div class="row">
         <div class="col-md-12 col-lg-12">
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary fixed-top">
     <a href="#" class="navbar-brand">LOAD SHEDDING</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -69,18 +66,21 @@ display: block;float: none;}
             <a href="aboutus.php" class="nav-item nav-link">About</a>
             <a href="#" class="nav-item nav-link" onclick="document.getElementById('id01').style.display='block'">Contact Us</a> &nbsp; &nbsp;
              <abbr title="COCIS NEWS"> <a href="https://cocis.news/" style="color:red"> <img src="imgs/cocis.png" style="height: 40px; width: 40px; border-radius: 5px;" alt="COCIS NEWS"></a> </abbr> &nbsp; &nbsp;
-            <a href="https://twitter.com/usherTgodwin" class="fa fa-twitter" style=" background: #55ACEE;
-  color: white; font-size: 30px; width: 40px; height: 40px; border-radius: 5px;"></a> &nbsp;&nbsp;
-            <a href="https://www.linkedin.com/in/tumuhimbise-usher-godwin-8947b3189/" class="fa fa-linkedin-square" style="color:blue; font-size: 30px;" ></a> &nbsp; &nbsp;
 <a href="https://wa.link/38riyu" class="fa fa-whatsapp" style="color:green; font-size: 30px;"></a>
-        </div> &nbsp;&nbsp; 
-        <form class="form-inline ml-auto" method="post" action="search-specific.php" id="hidef">
-                <input type="search" class="form-control mr-sm-2" placeholder="Search..." name="parish" required><button type="submit" class="btn btn-outline-light" name="submit">Search</button>
+        </div> &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; 
+        <form class="form-inline ml-auto" method="post" action="search-specific.php">
+            <div class="input-group">
+                <input type="search" class="form-control mr-sm-2" placeholder="Search..." name="parish" required>
+          <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-light">search</button>
+                </div>
+            </div>
         </form>    
     </div>
 </nav>
         </div>
         </div>
+        <br> <br> <br>
     <div class="card">
      <div class="alert" id="alert">
             <script>  function openAlert() {
