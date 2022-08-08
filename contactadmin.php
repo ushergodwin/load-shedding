@@ -11,7 +11,7 @@
 			
 			<div class="input-group">
 			<label style="font-size: 16px; font-weight: bold;">Email Address</label>
-			<input id="nice" type="email" name="EmailAddress" placeholder="someone@example.com" onclick="ValidateEmail(document.form1.EmailAddress" required> <br>
+			<input id="nice" type="email" name="EmailAddress" placeholder="someone@example.com" onclick="ValidateEmail(document.form1.EmailAddress)" required> <br>
 		</div>
 		<div class="input-group">
 			<label style="font-size: 16px; font-weight: bold;">Inquiry</label>

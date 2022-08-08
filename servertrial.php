@@ -98,13 +98,14 @@ if (isset($_POST['submit'])) {
 
 
         if(count($errors) == 0){
-        	$sql = "SELECT username, password FROM staff where username = '$username'";
+        	$sql = "SELECT username, password, account_type FROM staff where username = '$username'";
 
         	$results = mysqli_query($conn, $sql);
             $verify = mysqli_fetch_assoc($results);
             $true = password_verify($password, $verify['password']);
         	if (mysqli_num_rows($results) == 1 && $true) {
         		$_SESSION['username'] = $username;
+                $_SESSION['acc_type'] = (int) $verify['account_type'];
         		$_SESSION['sussess'] = "you are logged in";
                 header("location: welcome.php");
         	}else { 
@@ -113,6 +114,4 @@ if (isset($_POST['submit'])) {
         } 
     	
     }
-
-
 ?>
